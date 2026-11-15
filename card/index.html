@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Digital card — Mydul Islam</title><meta name="description" content="Save Mydul Islam's contact details."><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>M</text></svg>"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/css/site.css"></head><body data-root="../"><main class="wrap">
+<div class=cardpage>
+<p class=kicker>Digital card</p><h1>Mydul <em>Islam</em></h1>
+<p class=lead style="margin:0 auto 24px">Technical Project Manager<br>Semiconductor R&amp;D &amp; Sensor Product Development<br>Stuttgart, Germany</p>
+<button class=btn id=vc>Save contact</button>
+<a class=btn href=mailto:islam@mydul.me>Email</a>
+<a class="btn ghost" href=https://www.linkedin.com/in/mydul/>LinkedIn</a>
+<a class="btn ghost" href=https://www.mydul.me>Website</a>
+<div id=qr></div><p class=meta style="margin-top:10px">Scan to open this card</p>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+new QRCode(document.getElementById('qr'),{text:'https://www.mydul.me/card/',width:160,height:160,colorDark:'#1c1510',colorLight:'#f7f3ee'});
+document.getElementById('vc').onclick=()=>{const t='BEGIN:VCARD\nVERSION:3.0\nN:Islam;Md Mydul;;;\nFN:Md Mydul Islam\nORG:Magnetic Sense GmbH\nTITLE:Technical Project Manager\nTEL;TYPE=CELL:+4915901390177\nEMAIL:islam@mydul.me\nURL:https://www.mydul.me\nADR;TYPE=WORK:;;;Stuttgart;;;Germany\nEND:VCARD',a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t],{type:'text/vcard'}));a.download='Mydul-Islam.vcf';a.click();};
+</script>
+</main><script src="../assets/js/site.js"></script></body></html>
