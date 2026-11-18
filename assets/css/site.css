@@ -66,3 +66,68 @@ footer{padding:60px 5vw 40px}
 .fg b{display:block;color:var(--ink);margin-bottom:8px}.fg a{display:block;margin-bottom:6px}.fg a:hover{color:var(--coral)}
 .fine{max-width:1500px;margin:36px auto 0;font-size:13px;color:var(--mut)}
 @media(max-width:860px){.hero .in,.help,.about,.band,.fg{grid-template-columns:1fr}.me{max-width:320px}.help .cs>:nth-child(even){margin-top:0}.sec{padding:60px 5vw}.logo+nav a:not(.pill){padding:6px 8px;font-size:14px}}
+
+/* ── WORKED & STUDIED AT STRIP ── */
+
+.strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px 28px;
+}
+
+.strip small {
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.strip span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--slate);
+    white-space: nowrap;
+}
+
+.strip span img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Separate the two strips and place labels on their own lines */
+.strip small {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.strip + .strip {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+    .strip {
+        gap: 14px 18px;
+    }
+
+    .strip span {
+        font-size: 11.5px;
+        white-space: normal;
+    }
+
+    .strip span img {
+        width: 22px;
+        height: 22px;
+    }
+}
