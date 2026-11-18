@@ -2,7 +2,7 @@
 <script src="posts.js"></script>
 <script>
 const PER=8,pages=Math.ceil(POSTS.length/PER),q=+new URLSearchParams(location.search).get('page')||1,p=Math.min(Math.max(q,1),pages),$=i=>document.getElementById(i),L=n=>'?page='+n;
-$('lead').textContent=POSTS.length+' posts on project management, nanotech and Bengali writing.';
+$('lead').textContent=POSTS.length+' posts on Project Management, Nanotech, Technology, Bengali writing and many more.';
 $('list').innerHTML=POSTS.slice((p-1)*PER,p*PER).map(x=>`<a class=card href="${x.u}"><span class=meta>${x.d}</span><h3>${x.t}</h3>${x.x?`<p>${x.x}…</p>`:''}${(x.c||[]).map(c=>`<span class=tag>${c}</span>`).join('')}</a>`).join('');
 let h=`<a class="pg${p==1?' off':''}" href="${L(p-1)}">← Prev</a>`,last=0;
 for(let i=1;i<=pages;i++)if(i==1||i==pages||Math.abs(i-p)<=1){if(i-last>1)h+='<span class=gap>…</span>';h+=`<a class="pg${i==p?' on':''}" href="${L(i)}">${i}</a>`;last=i}
