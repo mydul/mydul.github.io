@@ -68,7 +68,6 @@ footer{padding:60px 5vw 40px}
 @media(max-width:860px){.hero .in,.help,.about,.band,.fg{grid-template-columns:1fr}.me{max-width:320px}.help .cs>:nth-child(even){margin-top:0}.sec{padding:60px 5vw}.logo+nav a:not(.pill){padding:6px 8px;font-size:14px}}
 
 /* ── WORKED & STUDIED AT STRIP ── */
-
 .strip {
     display: flex;
     align-items: center;
@@ -83,6 +82,9 @@ footer{padding:60px 5vw 40px}
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    flex-basis: auto;
+    margin-bottom: 0;
+    white-space: nowrap;
 }
 
 .strip span {
@@ -102,20 +104,12 @@ footer{padding:60px 5vw 40px}
     display: block;
 }
 
-/* Separate the two strips and place labels on their own lines */
-.strip small {
-    flex-basis: 100%;
-    text-align: center;
-    margin-bottom: 2px;
-}
-
 .strip + .strip {
     margin-top: 16px;
     padding-top: 14px;
     border-top: 1px solid var(--border);
 }
 
-/* Mobile */
 @media (max-width: 560px) {
     .strip {
         gap: 14px 18px;
