@@ -1,8 +1,5 @@
 /* Newest first. To add a post: copy a line, change it, and put it at the top. */
 const POSTS=[
-{"d": "2026-11-15", "t": "Moving a hardware R&amp;D team from waterfall to Scrum", "u": "scrum-for-hardware.html", "x": "What changed, what didn't.", "c": ["Project management"]},
-{"d": "2026-11-14", "t": "Terahertz waves in plain language", "u": "thz-explained.html", "x": "Why THz matters for sensing.", "c": ["Nanotech"]},
-{"d": "2026-11-13", "t": "From cleanroom to project plan", "u": "engineer-to-pm.html", "x": "What carried over from engineering.", "c": ["Career"]},
 {"d": "2023-02-24", "t": "The three circles of our everyday life", "u": "archive/2023-02-24-450.html", "x": "The first thing I really believe in is a circle of control. You may not be able to control what governments are doing or what certain people in the wo", "c": ["প্রবন্ধ-ইংরেজি"]},
 {"d": "2023-02-12", "t": "Love Letter at fall-in-love day", "u": "archive/2023-02-12-441.html", "x": "My dearest Better Half, On this very special day, I want to celebrate the most romantic occasions with you. Today marks our fall-in-love day since 201", "c": ["চিঠি"]},
 {"d": "2023-02-12", "t": "Quantum Mechanics in a simple story!", "u": "archive/2023-02-12-413.html", "x": "Classical physics can accurately explain many phenomena around us. It is possible to predict exactly where a ball will go after being hit by the bat t", "c": ["প্রবন্ধ-ইংরেজি"]},
