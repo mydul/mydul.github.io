@@ -1,0 +1,333 @@
+<!DOCTYPE html><html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Design and Implementation of Memristor — Mydul Islam</title><meta name="description" content="What is Memristor? A memristor is an electrical component that limits or regulates the flow of electrical current in a circuit and remembers the amoun"><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>M</text></svg>"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../assets/css/site.css"><style>body,.prose p,.prose li,h1,h2,h3,.card h3{font-family:'Hind Siliguri','DM Sans',sans-serif;letter-spacing:0}.prose{max-width:760px}.prose p,.prose li{font-size:1.15rem;line-height:1.9}.prose img{max-width:100%;height:auto;border-radius:14px}.prose h2,.prose h3{margin:30px 0 12px}.prose blockquote{border-left:4px solid var(--yellow);padding-left:16px;margin:0 0 16px}</style></head><body data-root="../../"><main class="wrap"><a class=back href=../>← সব লেখা</a><p class=kicker>2018-04-01</p><h1>Design and Implementation of Memristor</h1><span class=tag>প্রবন্ধ-ইংরেজি</span><div class=prose style="margin-top:20px">
+<figure class="wp-block-image aligncenter size-full is-resized"><img src="../../assets/blog-img/2023/01/image-1.png" alt="" class="wp-image-402" width="330" height="212"/></figure>
+
+
+
+<h2>What is Memristor?</h2>
+
+
+
+<p>A memristor is an electrical component that limits or regulates the flow of electrical current in a circuit and remembers the amount of charge that has previously flowed through it.</p>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQGJO8sSxNLBdQ/article-inline_image-shrink_400_744/0/1522565652786?e=1678320000&amp;v=beta&amp;t=FCmkJtleW5h2D06oSzjQpcQebHo5XaF5DfI56-iOM4Q" alt=""/></figure>
+
+
+
+<h2>History of Memristor:</h2>
+
+
+
+<p>In 1971, Professor Leon Chua first gave his idea on memristor theory as the continuation of his non-linear theory.</p>
+
+
+
+<p>He described the relationship between the flux φ, charge q, current i, and voltage v using the basic circuit elements: resistor R, inductor L, and capacitor C. But then based on the symmetry and fact, he proposed that there exists another basic circuit element and called it “memristor: the missing link”.</p>
+
+
+
+<p>In 2008, HP Lab discovered the memristor physically.&nbsp;</p>
+
+
+
+<figure class="wp-block-image aligncenter is-resized"><img src="https://media.licdn.com/dms/image/C4E12AQFGRWrDlP0RJw/article-inline_image-shrink_400_744/0/1522565759553?e=1678320000&amp;v=beta&amp;t=2fc6eJZNCpL9xQg3oXlIhvNj8Jo289EcJr1RvHq79Ko" alt="" width="-150" height="-140"/></figure>
+
+
+
+<h2>Fundamental Passive Linear Element (Proposed By Leon Chua):</h2>
+
+
+
+<figure class="wp-block-image aligncenter is-resized"><img src="https://media.licdn.com/dms/image/C4E12AQEJXKkkBqeSZg/article-inline_image-shrink_1000_1488/0/1522565904082?e=1678320000&amp;v=beta&amp;t=AVvfO3rVPBcWfyptZyV5vzAjMZBwD29pPLqtZQz4f-8" alt="" width="-142" height="-120"/></figure>
+
+
+
+<h2>The analogy of Memristor:</h2>
+
+
+
+<p>The resistor with memory that Leon Chua described behaves like a pipe whose diameter varies according to the amount and direction of the current passing.</p>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQG9W_eqWK5sMQ/article-inline_image-shrink_400_744/0/1522566227251?e=1678320000&amp;v=beta&amp;t=65B8UyHI82UlWNNxc74AxPnL8BYarM5N64eY2zXaM8I" alt=""/></figure>
+
+
+
+<p>If the current is turned off, The pipe's diameter stays until it is switched on again it "Remembers“ what current has flowed through it.</p>
+
+
+
+<h2>Working Principle&nbsp;of Memristor:</h2>
+
+
+
+<p>Memristor switching behavior. (a) “ON” state, low resistance, (b) “OFF” state, high resistance. The key feature of the memristor is it can remember the resistance once the voltage is disconnected. In (a) “doped” and “undoped” regions are related to RON and ROFF, respectively. The dopant consists of mobile charges. In (b), L and w are the thin-film thickness and doped region thickness, respectively.</p>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQE_soJOxrFbSw/article-inline_image-shrink_1000_1488/0/1522566345170?e=1678320000&amp;v=beta&amp;t=Dp0PaLgBVhrY33fWjUqNcKvlmWtiicxTsicvJJ1nH_w" alt=""/></figure>
+
+
+
+<h2>Memristor Model:</h2>
+
+
+
+<p>The major presented memristor models are,</p>
+
+
+
+<ul>
+<li><strong>Linear Ion-Drift Model</strong></li>
+</ul>
+
+
+
+<p> i. HP Model: HP model, which was published in 2008, explains the physical behavior of the memristor device. It is mainly a nonlinear device which divided by two regions or two variable resistors inside it.</p>
+
+
+
+<p>Voltage equation, v(t)={R_ON&nbsp;w(t)/D+R_OFF (1-w(t)/D)}i(t)</p>
+
+
+
+<p>Current equation, i(t)=(v(t))/(R_OFF (1-√(1-(2μ_D)/(rD^2 ) φ(t))))</p>
+
+
+
+<p>HP model, which was actually a linear model, cannot explain how this device will behave in the boundary. To solve the boundary problem, different window functions have been proposed. The main goal of this paper is to compare different window functions that have been proposed at different times. Such as,</p>
+
+
+
+<p> ii. Strukov et al</p>
+
+
+
+<p> iii. Benderli</p>
+
+
+
+<p> iv. Joglekar</p>
+
+
+
+<p> v. Biolek</p>
+
+
+
+<p> vi. Prodromakis</p>
+
+
+
+<p> vii. Picewise</p>
+
+
+
+<p> viii. TEAM</p>
+
+
+
+<ul>
+<li><strong>Nonlinear Ion-Drift Models</strong></li>
+</ul>
+
+
+
+<ul>
+<li><strong>Simmons Tunnel Barrier Model</strong></li>
+</ul>
+
+
+
+<h2><strong>Window functions of Memristor:</strong></h2>
+
+
+
+<p>A common approach to model memristive systems is to include empirical window functions to describe edge effects and nonlinearities in the change of the memristance.</p>
+
+
+
+<p>The window functions give two things:</p>
+
+
+
+<ol>
+<li>A state variable working interval,</li>
+</ol>
+
+
+
+<p>    2. The nonlinearity near boundaries forces it to reach zero when the state variable is within the bounds.</p>
+
+
+
+<h2><strong>Hysteresis curve of the various window function in LTspice:</strong></h2>
+
+
+
+<p>Hysteresis curve of the Biolek:</p>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQE7n1ZNaNWhvw/article-inline_image-shrink_400_744/0/1522566759616?e=1678320000&amp;v=beta&amp;t=PnapMUbki193OHdpL7A435ghzGlbwMGGPaMlfENMcdM" alt=""/></figure>
+
+
+
+<p>Hysteresis curve of the Joglekar:</p>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQHMTYlo4Iy9Dw/article-inline_image-shrink_400_744/0/1522566821096?e=1678320000&amp;v=beta&amp;t=MmL4_SwUB_k0X_pRRA46kScObsq7gpO61I74gPaBWGo" alt=""/></figure>
+
+
+
+<p>Hysteresis curve of the Picewise:</p>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQFqA6rhlu_z-w/article-inline_image-shrink_400_744/0/1522566846617?e=1678320000&amp;v=beta&amp;t=60Ifv-7-jApp5RLvfBjMW6j2ViKPFRhtK82imnitVXM" alt=""/></figure>
+
+
+
+<p>Hysteresis curve of the TEAM:</p>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQHrety6FSl0YA/article-inline_image-shrink_400_744/0/1522566868907?e=1678320000&amp;v=beta&amp;t=kXO1QrtHcZ2hbJzg2oxdGoZjCWXIP1FETQa68bnGTFg" alt=""/></figure>
+
+
+
+<h2><strong>Comparison of Window Function:</strong></h2>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQEok1l_J-dHrQ/article-inline_image-shrink_1000_1488/0/1522567012951?e=1678320000&amp;v=beta&amp;t=7QIXAdSlIB5mmRFnvLha-5onSKA9AEOAPa4npfE-e9I" alt=""/></figure>
+
+
+
+<h2><strong>Logic Families:</strong></h2>
+
+
+
+<p>The memristor works for the different logic families. Such as,</p>
+
+
+
+<p>i. Material Implication Logic,</p>
+
+
+
+<p>ii. Memristor Ratioed Logic (MRL),</p>
+
+
+
+<p>iii. Memristor Aided Logic (MAGIC), and</p>
+
+
+
+<p>iv. Programmable Logic Memristor Array</p>
+
+
+
+<p>In our thesis we only works for Memristor Ratioed Logic.</p>
+
+
+
+<h2><strong>Memristor Ratioed Logic (MRL):</strong></h2>
+
+
+
+<p>The MRL family represents the logic levels using voltages and hence it has potential to be compatible with standard CMOS logic. It is inspired by Diode logic and as a result, they both share same properties. i.e. the logic is noninverting and non-restoring.</p>
+
+
+
+<p>2 input And gate:</p>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQFeZolYVanbHg/article-inline_image-shrink_400_744/0/1522567264645?e=1678320000&amp;v=beta&amp;t=-ZpWm4W5-eCbWheQOirWDpfZ15zPuUMizCuGlkSrH9c" alt=""/></figure>
+
+
+
+<p>2 input Or gate:</p>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQGLndBm2h-2pQ/article-inline_image-shrink_400_744/0/1522567326792?e=1678320000&amp;v=beta&amp;t=t6TkK9p4f0mAk2T7X1FeFjHsyjL0n8fiFOULm0ynIgw" alt=""/></figure>
+
+
+
+<h2><strong>AND and NAND Gate Implementation:</strong></h2>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQFj-molOaGGRw/article-inline_image-shrink_1000_1488/0/1522567360404?e=1678320000&amp;v=beta&amp;t=soMR-fd_Q8lNxWP71nmdAtrz49HIW778fjGh8TaV1YY" alt=""/></figure>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQF7swTHQeBK6w/article-inline_image-shrink_1000_1488/0/1522567368499?e=1678320000&amp;v=beta&amp;t=0Im2m1Rwc3-ZJompzKtiqc-4v94sgzSqNsSCqmDd7z4" alt=""/></figure>
+
+
+
+<h2><strong>OR and NOR Gate Implementation:</strong></h2>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQHzs-uir6VCbw/article-inline_image-shrink_1000_1488/0/1522567399530?e=1678320000&amp;v=beta&amp;t=QKQNTO7_0uUjqZqxTvcyQjk9Rq_7GXafrjzHvJ_136w" alt=""/></figure>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQESuPKqgX5KjA/article-inline_image-shrink_1000_1488/0/1522567407330?e=1678320000&amp;v=beta&amp;t=PdhCDQnjP9TQH-wKPz6vzUQqmqrTB12xAmR0qIdr5KA" alt=""/></figure>
+
+
+
+<h2><strong>XOR Gate Implementation:</strong></h2>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQG8-8u3K2Ht8Q/article-inline_image-shrink_1000_1488/0/1522567432696?e=1678320000&amp;v=beta&amp;t=AXh0CBQcbgDAS4a5xCZdWc6isGpiaL4azD6fS-V-d-M" alt=""/></figure>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQHThbIvrET8Ng/article-inline_image-shrink_1000_1488/0/1522567440085?e=1678320000&amp;v=beta&amp;t=-JK2Ko0dNVqCNlc39SPcBUmx07cAAq0muQh-mw79oiU" alt=""/></figure>
+
+
+
+<h2><strong>Application of Memristor:</strong></h2>
+
+
+
+<figure class="wp-block-image aligncenter"><img src="https://media.licdn.com/dms/image/C4E12AQE26ReK6oMrTQ/article-inline_image-shrink_1000_1488/0/1522567516512?e=1678320000&amp;v=beta&amp;t=_Td33taONtUSdo8Okf29iLeeG5rirstAr_elGm7T_ww" alt=""/></figure>
+
+
+
+<h2><strong>Benefits Of using Memristor:</strong></h2>
+
+
+
+<p>Would allow for a quicker boot up since information is not lost when the device is turned off. Uses less energy and produces less heat. Eliminates the need to write computer programs that replicate small parts of the brain. Compatible with current CMOS interfaces. Power Consumption. As a non-volatile memory, memristors do not consume power when idle. Creating an Analog Computer that works much faster than Digital ones. Provides greater resiliency and reliability when power is interrupted in data centers. Density allows for more information to be stored.</p>
+
+
+
+<h2><strong>Future Work:</strong></h2>
+
+
+
+<p>All the AI circuits and neural networks in the past have been built on digital 1s and 0s, However, memristors, because they act similarly to synapses, might be used to test emulated neurotransmitter functions.</p>
+
+
+
+<p>Used for understanding conscious feelings involves pain and pleasure centers in the brain along with neurotransmitters (serotonin, dopamine, melatonin, glycine, etc.)</p>
+
+
+
+<p>Biologists know that neurotransmitters play an important role in consciousness and feeling centers because you only need to take a drug like cocaine or LSD (that mimics natural neurotransmitters) to dramatically change the state of consciousness.</p>
+
+
+
+<ul>
+<li>Copyright © 2018,&nbsp;<a href="https://www.mydul.me/" target="_blank" rel="noreferrer noopener">Mydul Islam</a>&nbsp;| All Rights Reserved</li>
+</ul>
+</div></main><script src="../../assets/js/site.js"></script></body></html>
