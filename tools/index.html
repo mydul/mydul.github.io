@@ -22,13 +22,14 @@ html[data-theme=dark] .ab .tg span{background:#26253a;color:#eee}
 <script>
 /* EDIT HERE: app address, GitHub repo, title, text and tags */
 const APPS=[
- {name:'Hilal',url:'https://mydul.github.io/Hilal/',repo:'https://github.com/mydul/Hilal',text:'A web app I built and host myself. Open it in your browser, no install or sign-up needed.',tags:['Web app','HTML · CSS · JS','Free']},
- {name:'MyZakat',url:'https://mydul.github.io/MyZakat/',repo:'https://github.com/mydul/MyZakat',text:'A simple Zakat calculator that runs in your browser. Nothing you enter leaves your device.',tags:['Web app','Calculator','Private']}
+ {name:'Hilal',url:'https://mydul.github.io/Hilal/',repo:'https://github.com/mydul/Hilal',text:'A web app I built and host myself where Moon Sighting explained. Open it in your browser, no install or sign-up needed.',tags:['هلال','Moon Sighting
+','চাঁদ দেখা','Islamic tradition', 'modern astronomy', 'lunar month','Free']},
+ {name:'MyZakat',url:'https://mydul.github.io/MyZakat/',repo:'https://github.com/mydul/MyZakat',text:'A simple Zakat calculator that runs in your browser. Nothing you enter leaves your device.',tags:['যাকাত','Calculator','زكاة']}
 ];
 document.getElementById('apps').innerHTML=APPS.map(a=>`<article class=app>
  <div class=pv><div class=bar><i></i><i></i><i></i></div><iframe src="${a.url}" loading=lazy tabindex=-1 title="${a.name} preview" aria-hidden=true></iframe><a class=go href="${a.url}" target=_blank rel=noopener aria-label="Open ${a.name}"></a></div>
  <div class=ab><h3>${a.name}</h3><p>${a.text}</p><div class=tg>${a.tags.map(t=>`<span>${t}</span>`).join('')}</div>
- <div class=row><a class=btn href="${a.url}" target=_blank rel=noopener>Open app ↗</a><a class="btn ghost" href="${a.repo}" target=_blank rel=noopener>Source code</a></div></div></article>`).join('');
+ <div class=row><a class=btn href="${a.url}" target=_blank rel=noopener>Open app ↗</a></div></div></article>`).join('');
 function fit(){document.querySelectorAll('.pv').forEach(p=>{const f=p.querySelector('iframe');f.style.transform='scale('+(p.clientWidth/1200)+')'})}
 addEventListener('resize',fit);fit();
 </script>
