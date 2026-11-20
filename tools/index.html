@@ -1,5 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tools — Mydul Islam</title><meta name="description" content="Web apps I built: Hilal and MyZakat."><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>M</text></svg>"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/css/site.css">
 <style>
+ .lead{max-width:none}
 .apps{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:36px}
 .app{background:var(--card,#fff);border:1px solid var(--line,#e8e0d4);border-radius:28px;overflow:hidden;display:flex;flex-direction:column;transition:.25s;box-shadow:0 20px 50px -30px rgba(22,22,42,.35)}
 .app:hover{transform:translateY(-6px);box-shadow:0 30px 60px -28px rgba(22,22,42,.45)}
@@ -22,7 +23,7 @@ html[data-theme=dark] .ab .tg span{background:#26253a;color:#eee}
 <script>
 /* EDIT HERE: app address, GitHub repo, title, text and tags */
 const APPS=[
- {name:'Hilal',url:'https://mydul.github.io/Hilal/',repo:'https://github.com/mydul/Hilal',text:'A web app I built and host myself where Moon Sighting explained. Open it in your browser, no install or sign-up needed.',tags:['চাঁদ দেখা','Moon Sighting','modern astronomy','lunar month']},
+ {name:'Hilal',url:'https://mydul.github.io/Hilal/',repo:'https://github.com/mydul/Hilal',text:'A web app I built and host myself where Moon Sighting explained. Open it in your browser, no install or sign-up needed.',tags:['চাঁদ দেখা','Moon Sighting','modern astronomy']},
  {name:'MyZakat',url:'https://mydul.github.io/MyZakat/',repo:'https://github.com/mydul/MyZakat',text:'A simple Zakat calculator that runs in your browser. Nothing you enter leaves your device.',tags:['যাকাত','Zakat','زكاة','Calculator']}
 ];
 document.getElementById('apps').innerHTML=APPS.map(a=>`<article class=app>
