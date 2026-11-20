@@ -9,10 +9,10 @@ const CSS=`
 .fg .soc a i{font-size:19px}
 .fg .soc a:hover{background:var(--yellow);color:#16162a;transform:translateY(-4px)}
 footer{border-top:1px solid var(--line);margin-top:20px}
-.fine{border-top:1px solid var(--line);padding-top:22px}
+.cp{margin:8px 0 0;font-size:13px;color:var(--mut)}
 .tm{width:40px;height:40px;border-radius:50%;border:0;background:var(--card);color:var(--ink);font-size:17px;cursor:pointer;margin-left:6px;transition:.2s}
 .tm:hover{background:var(--yellow);color:#16162a}
-#up{position:fixed;right:22px;bottom:22px;width:48px;height:48px;border-radius:50%;border:0;background:var(--yellow);color:#16162a;font:700 22px/1 var(--sans);cursor:pointer;box-shadow:0 10px 26px rgba(22,22,42,.22);opacity:0;pointer-events:none;transform:translateY(10px);transition:.25s;z-index:20}
+#up{position:fixed;right:22px;bottom:64px;width:48px;height:48px;border-radius:50%;border:0;background:var(--yellow);color:#16162a;font:700 22px/1 var(--sans);cursor:pointer;box-shadow:0 10px 26px rgba(22,22,42,.22);opacity:0;pointer-events:none;transform:translateY(10px);transition:.25s;z-index:20}
 #up.on{opacity:1;pointer-events:auto;transform:none}#up:hover{background:var(--blue)}
 .prose figure,.prose .wp-block-image{margin:28px auto;text-align:center}.prose img{display:block;max-width:100%;height:auto;margin:24px auto;border-radius:12px}.prose figure img{margin:0 auto}.prose figcaption{text-align:center;color:var(--mut);font-size:.9rem;margin-top:8px}
 .pn{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px;max-width:760px}
@@ -33,7 +33,7 @@ footer{border-top:1px solid var(--line);margin-top:20px}
 `;
 D.head.insertAdjacentHTML('beforeend','<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"><style>'+CSS+'</style>');
 D.body.insertAdjacentHTML('afterbegin',`<header><div><a class="logo" href="${r}">Mydul Islam</a><nav>${L.map(x=>`<a href="${r}${x[1]}"${x===m?' class="on"':''}>${x[0]}</a>`).join('')}<a class="pill" href="${r}card/">Say hello 👋</a><button class="tm" id="tm" type="button"></button></nav></div></header>`);
-D.body.insertAdjacentHTML('beforeend',`<footer><div class="fg"><div><a class="logo" href="${r}">Mydul Islam</a><div class="soc">${S.map(s=>`<a href="${s[0]}" target="_blank" rel="noopener noreferrer" aria-label="${s[1]}" title="${s[1]}">${s[2].startsWith('bi-')?`<i class="bi ${s[2]}"></i>`:s[2]}</a>`).join('')}</div></div><div><b>Explore</b><a href="${r}blog/">Blog</a><a href="${r}projects/">Projects</a><a href="${r}tools/">Tools</a></div><div><b>About</b><a href="${r}resume/">Resume</a><a href="${r}card/">Digital card</a><a href="${r}impressum/">Impressum</a></div><div><b>Contact</b><a href="mailto:islam@mydul.me">islam@mydul.me</a><a href="${r}card/">Save my contact</a></div></div><p class="fine">© 2017 Mydul Islam. All rights reserved.</p></footer><button id="up" type="button" aria-label="Back to top">&uarr;</button>`);
+D.body.insertAdjacentHTML('beforeend',`<footer><div class="fg"><div><a class="logo" href="${r}">Mydul Islam</a><p class="cp">© ${new Date().getFullYear()} Mydul Islam. All rights reserved.</p><div class="soc">${S.map(s=>`<a href="${s[0]}" target="_blank" rel="noopener noreferrer" aria-label="${s[1]}" title="${s[1]}">${s[2].startsWith('bi-')?`<i class="bi ${s[2]}"></i>`:s[2]}</a>`).join('')}</div></div><div><b>Explore</b><a href="${r}blog/">Blog</a><a href="${r}projects/">Projects</a><a href="${r}tools/">Tools</a></div><div><b>About</b><a href="${r}resume/">Resume</a><a href="${r}card/">Digital card</a><a href="${r}impressum/">Impressum</a></div><div><b>Contact</b><a href="mailto:islam@mydul.me">islam@mydul.me</a><a href="${r}card/">Save my contact</a></div></div></footer><button id="up" type="button" aria-label="Back to top">&uarr;</button>`);
 /* dark / light mode */
 const tm=D.getElementById('tm'),setT=t=>{D.documentElement.dataset.theme=t;try{localStorage.setItem('theme',t)}catch(e){}tm.innerHTML=t=='dark'?'<i class="bi bi-sun-fill"></i>':'<i class="bi bi-moon-stars-fill"></i>';tm.title=tm.ariaLabel=t=='dark'?'Switch to light mode':'Switch to dark mode'};
 let t0;try{t0=localStorage.getItem('theme')}catch(e){}
