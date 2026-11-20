@@ -50,19 +50,31 @@
 </div>
 </section>
 
+<style>
+.help .cs>.card{position:relative;display:flex;flex-direction:column;gap:6px;padding:30px 28px 26px;border:1px solid var(--line);overflow:hidden}
+.help .cs>.card:before{content:"";position:absolute;right:-40px;top:-40px;width:130px;height:130px;border-radius:50%;background:var(--ac);opacity:.16;transition:.4s}
+.help .cs>.card:hover:before{transform:scale(1.5);opacity:.22}
+.help .ib{width:58px;height:58px;border-radius:18px;background:var(--ac);display:grid;place-items:center;font-size:28px;margin-bottom:12px;position:relative;box-shadow:0 10px 20px -10px var(--ac)}
+.help .card h3{font-size:1.35rem;position:relative}.help .card p{position:relative;line-height:1.55;flex:1}
+.help .card .more{position:relative;margin-top:10px;font-weight:700;font-size:14px;color:var(--ink)}
+.help .card .more i{display:inline-block;font-style:normal;transition:.25s}.help .card:hover .more i{transform:translateX(5px)}
+.tile .top{position:relative;flex-direction:column;gap:12px}.tile .top small{font:700 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;background:rgba(255,255,255,.22);padding:7px 12px;border-radius:99px}.c2 small{background:rgba(22,22,42,.12)!important}
+.tile .bd p{font-size:14.5px;color:var(--ink2);line-height:1.5;margin:0 0 12px}.tile .tg{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}.tile .tg span{font:600 12px var(--sans);background:var(--bg);padding:5px 10px;border-radius:99px;color:var(--ink2)}
+.tile{display:flex;flex-direction:column}.tile .bd{flex:1;display:flex;flex-direction:column}.tile .go{margin-top:auto}
+html[data-theme=dark] .tile .tg span{background:#26253a}
+</style>
 <section class="sec"><div class="in help"><div><p class="kicker">What I do</p><h2 style="margin-top:0;font-size:clamp(2.4rem,4vw,3.6rem)">How can I <span class="hb">help you?</span></h2><p class="lead">Whether you need someone to run a technical project or explain a nano-sized idea, start here.</p></div>
 <div class="cs">
-<a class="card" href="projects/"><span class="ic">🚀</span><h3>Lead a technical project</h3><p>Schedules, budgets, risks and teams across simulation, hardware and firmware.</p></a>
-<a class="card" href="blog/"><span class="ic">📝</span><h3>Understand nanotech</h3><p>Plain-language notes on THz, sensors and R&amp;D management.</p></a>
-<a class="card" href="tools/"><span class="ic">🧮</span><h3>Use a quick tool</h3><p>THz converter, Bragg's law and a PERT estimator.</p></a>
-<a class="card" href="card/"><span class="ic">🤝</span><h3>Connect with me</h3><p>Save my contact or scan the QR code.</p></a>
+<a class="card" style="--ac:var(--coral)" href="projects/"><span class="ib">🚀</span><h3>Lead a technical project</h3><p>Planning and steering R&amp;D projects: schedules, budgets, risks and cross-functional teams, from simulation to hardware and firmware.</p><span class="more">See my projects <i>→</i></span></a>
+<a class="card" style="--ac:var(--blue)" href="blog/"><span class="ib">📝</span><h3>Understand nanotech</h3><p>Plain-language writing on THz, sensors, nanotechnology and R&amp;D management, in English and Bengali.</p><span class="more">Read the blog <i>→</i></span></a>
+<a class="card" style="--ac:var(--green)" href="tools/"><span class="ib">🌙</span><h3>Try my web apps</h3><p>Hilal explains moon sighting and MyZakat is a simple Zakat calculator. Both are free and run in your browser.</p><span class="more">Open the apps <i>→</i></span></a>
+<a class="card" style="--ac:var(--purple)" href="card/"><span class="ib">🤝</span><h3>Connect with me</h3><p>Save my contact, scan the QR code or find me on LinkedIn, GitHub and Google Scholar.</p><span class="more">Open my digital card <i>→</i></span></a>
 </div></div></section>
 
 <section class="sec alt"><div class="in about"><div><p class="kicker">About</p><h2 style="margin-top:0;font-size:clamp(2.2rem,4vw,3.4rem)">Hey, I'm <span class="hl">Mydul Islam</span></h2></div>
 <div class="prose"><p>I grew up in Bangladesh, studied electrical engineering, then moved to Germany for a Master's in Nanosciences and Nanotechnology in Siegen. After years in labs and on a production line, I now plan and deliver R&amp;D projects for magnetic torque and force sensors.</p><p>I like the space where physics meets project plans, and I write about it here.</p>
 <a class="btn" href="blog/">Read my blog</a><a class="btn dark" href="projects/">See projects</a><a class="btn ghost" href="card/">Digital card</a></div></div></section>
 
-<section class="sec"><div class="in"><p class="kicker"></p><h2 style="margin-top:0"><span class="hl"></span></h2>
 <!--
 <section class="sec"><div class="in"><p class="kicker">Writing</p><h2 style="margin-top:0">Latest from the <span class="hl">blog</span></h2>
 <div class="tiles">
@@ -76,10 +88,10 @@
 
 <section class="sec alt"><div class="in"><p class="kicker">Work</p><h2 style="margin-top:0">Featured <span class="hb">projects</span></h2>
 <div class="tiles">
-<a class="tile" href="projects/thz-metamaterial-sensor.html"><div class="top c1">THz biosensor</div><div class="bd"><h3>THz metamaterial microfluidic chip</h3><span class="go">View case study →</span></div></a>
-<a class="tile" href="projects/graphene-fet.html"><div class="top c2">Graphene FET</div><div class="bd"><h3>Graphene field-effect transistor</h3><span class="go">View case study →</span></div></a>
-<a class="tile" href="projects/memristor-thesis.html"><div class="top c3">Memristor</div><div class="bd"><h3>Window functions and logic gates</h3><span class="go">View case study →</span></div></a>
-<a class="tile" href="tools/"><div class="top c4">Tools</div><div class="bd"><h3>Small calculators for nanotech and PM</h3><span class="go">Try them →</span></div></a>
+<a class="tile" href="projects/thz-metamaterial-sensor.html"><div class="top c1"><small>M.Sc. thesis · Siegen</small>THz biosensor</div><div class="bd"><h3>THz metamaterial microfluidic chip</h3><p>A label-free sensor chip for tiny liquid samples, built in the cleanroom and measured with THz spectroscopy.</p><div class="tg"><span>Cleanroom</span><span>THz</span><span>PDMS</span></div><span class="go">View case study →</span></div></a>
+<a class="tile" href="projects/graphene-fet.html"><div class="top c2"><small>Lab project · Siegen</small>Graphene FET</div><div class="bd"><h3>Graphene field-effect transistor</h3><p>Devices grown by CVD, patterned by lithography and characterised for carrier mobility and transconductance.</p><div class="tg"><span>CVD</span><span>Lithography</span><span>Measurement</span></div><span class="go">View case study →</span></div></a>
+<a class="tile" href="projects/memristor-thesis.html"><div class="top c3"><small>B.Sc. thesis · Green Univ.</small>Memristor</div><div class="bd"><h3>Window functions and logic gates</h3><p>A comparison of memristor window functions and hybrid CMOS/memristor logic gates, including an XOR gate.</p><div class="tg"><span>Simulation</span><span>MRL</span><span>CMOS</span></div><span class="go">View case study →</span></div></a>
+<a class="tile" href="tools/"><div class="top c4"><small>Side projects</small>Web apps</div><div class="bd"><h3>Hilal and MyZakat</h3><p>Two free web apps I built and host myself: moon sighting explained, and a private Zakat calculator.</p><div class="tg"><span>Hilal</span><span>MyZakat</span><span>Free</span></div><span class="go">Open the apps →</span></div></a>
 </div></div></section>
 
 <section class="sec"><div class="in band"><div><h2>Let's build something together</h2><p style="font-size:1.1rem">Got a project, a question or an opportunity? I'd love to hear from you.</p></div><div><a class="btn dark" href="mailto:islam@mydul.me">Email me</a><a class="btn ghost" href="https://www.linkedin.com/in/mydul/">LinkedIn</a></div></div></section>
