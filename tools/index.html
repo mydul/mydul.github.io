@@ -1,34 +1,35 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tools — Mydul Islam</title><meta name="description" content="Small interactive tools: THz converter, Bragg's law, PERT estimator."><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>M</text></svg>"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/css/site.css"></head><body data-root="../"><main class="wrap">
-<p class=kicker>Playground</p><h1>Small <em>tools</em></h1>
-<p class=lead>Handy calculators from my two worlds: nanotech and project management.</p>
-<h2>Web apps</h2>
-<div class=grid>
-<a class=card href=https://www.mydul.me/Hilal/><span class=meta>Astronomy · English &amp; বাংলা</span><h3>Hilal: Moon Sighting, Understood</h3><p>Crescent visibility world map and checker, built on Meeus algorithms and the Odeh criterion. Runs entirely in your browser.</p><span class=tag>JavaScript</span><span class=tag>Canvas</span><span class=tag>Odeh 2006</span></a>
-<a class=card href=https://www.mydul.me/MyZakat/><span class=meta>Finance · Islamic guidance</span><h3>MyZakat: Zakat Calculator</h3><p>Calculates Zakat and Zakat al-Fitr from gold, silver, cash, investments and liabilities, with BDT, EUR and USD support.</p><span class=tag>Gold &amp; silver Nisab</span><span class=tag>Multi-currency</span></a>
-</div>
-<h2>Quick calculators</h2>
-<div class=grid>
-<div class=card><h3>Frequency · wavelength · energy</h3>
-<label>I know the…</label><select id=fk><option value=f>Frequency (THz)</option><option value=w>Wavelength (µm)</option><option value=e>Photon energy (meV)</option></select>
-<label>Value</label><input id=fv type=number step=any value=1><div class=out id=fo></div></div>
-<div class=card><h3>Bragg's law</h3>
-<label>Order n</label><input id=bn type=number value=1 min=1>
-<label>Wavelength λ (Å)</label><input id=bl type=number step=any value=1.5406>
-<label>Plane spacing d (Å)</label><input id=bd type=number step=any value=3><div class=out id=bo></div></div>
-<div class=card><h3>PERT estimate</h3>
-<label>Optimistic (days)</label><input id=po type=number step=any value=4>
-<label>Most likely (days)</label><input id=pm type=number step=any value=6>
-<label>Pessimistic (days)</label><input id=pp type=number step=any value=14><div class=out id=po2></div></div>
-</div>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tools — Mydul Islam</title><meta name="description" content="Web apps I built: Hilal and MyZakat."><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>M</text></svg>"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/css/site.css">
+<style>
+.apps{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:36px}
+.app{background:var(--card,#fff);border:1px solid var(--line,#e8e0d4);border-radius:28px;overflow:hidden;display:flex;flex-direction:column;transition:.25s;box-shadow:0 20px 50px -30px rgba(22,22,42,.35)}
+.app:hover{transform:translateY(-6px);box-shadow:0 30px 60px -28px rgba(22,22,42,.45)}
+.pv{position:relative;height:300px;overflow:hidden;background:#16162a;border-bottom:1px solid var(--line,#e8e0d4)}
+.pv .bar{position:absolute;top:0;left:0;right:0;height:30px;background:#26253a;z-index:2;display:flex;gap:6px;align-items:center;padding:0 12px}
+.pv .bar i{width:10px;height:10px;border-radius:50%;background:#e8553f}.pv .bar i:nth-child(2){background:#f8c43c}.pv .bar i:nth-child(3){background:#4fc08d}
+.pv iframe{position:absolute;top:30px;left:0;width:1200px;height:900px;border:0;transform-origin:0 0;pointer-events:none;background:#fff}
+.pv a.go{position:absolute;inset:0;z-index:3}
+.ab{padding:26px 28px 30px;display:flex;flex-direction:column;gap:12px;flex:1}
+.ab h3{font:700 1.7rem Fraunces,serif;margin:0}
+.ab p{color:var(--ink2,#5b5870);margin:0;line-height:1.55}
+.ab .tg{display:flex;flex-wrap:wrap;gap:8px}.ab .tg span{background:#f2ece3;color:#16162a;padding:6px 13px;border-radius:99px;font:600 13px 'DM Sans',sans-serif}
+.ab .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+html[data-theme=dark] .ab .tg span{background:#26253a;color:#eee}
+@media(max-width:820px){.apps{grid-template-columns:1fr}.pv{height:240px}}
+</style></head><body data-root="../"><main class="wrap">
+<p class=kicker>Playground</p><h1>Web <em>apps</em></h1>
+<p class=lead>Two small apps I built and host myself. Open them right in your browser.</p>
+<div class=apps id=apps></div>
 <script>
-const $=i=>document.getElementById(i),n=i=>+$(i).value;
-function conv(){const v=n('fv'),k=$('fk').value,f=k=='f'?v:k=='w'?299.792458/v:v/4.135667696;
-$('fo').innerHTML=f>0&&isFinite(f)?`Frequency <b>${f.toPrecision(5)} THz</b><br>Wavelength <b>${(299.792458/f).toPrecision(5)} µm</b><br>Photon energy <b>${(4.135667696*f).toPrecision(5)} meV</b>`:'Enter a positive value.';}
-function bragg(){const s=n('bn')*n('bl')/(2*n('bd')),t=Math.asin(s)*180/Math.PI;
-$('bo').innerHTML=s>0&&s<=1?`θ <b>${t.toFixed(3)}°</b><br>2θ <b>${(2*t).toFixed(3)}°</b>`:'No diffraction for these values (nλ/2d must be between 0 and 1).';}
-function pert(){const o=n('po'),m=n('pm'),p=n('pp');
-$('po2').innerHTML=p>=m&&m>=o?`Expected <b>${((o+4*m+p)/6).toFixed(1)} days</b><br>Std. deviation <b>${((p-o)/6).toFixed(1)} days</b>`:'Needs optimistic ≤ most likely ≤ pessimistic.';}
-[['fv','fk'],['bn','bl','bd'],['po','pm','pp']].forEach((g,i)=>g.forEach(x=>$(x).addEventListener('input',[conv,bragg,pert][i])));
-document.getElementById('fk').addEventListener('change',conv);conv();bragg();pert();
+/* EDIT HERE: app address, GitHub repo, title, text and tags */
+const APPS=[
+ {name:'Hilal',url:'https://mydul.github.io/Hilal/',repo:'https://github.com/mydul/Hilal',text:'A web app I built and host myself. Open it in your browser, no install or sign-up needed.',tags:['Web app','HTML · CSS · JS','Free']},
+ {name:'MyZakat',url:'https://mydul.github.io/MyZakat/',repo:'https://github.com/mydul/MyZakat',text:'A simple Zakat calculator that runs in your browser. Nothing you enter leaves your device.',tags:['Web app','Calculator','Private']}
+];
+document.getElementById('apps').innerHTML=APPS.map(a=>`<article class=app>
+ <div class=pv><div class=bar><i></i><i></i><i></i></div><iframe src="${a.url}" loading=lazy tabindex=-1 title="${a.name} preview" aria-hidden=true></iframe><a class=go href="${a.url}" target=_blank rel=noopener aria-label="Open ${a.name}"></a></div>
+ <div class=ab><h3>${a.name}</h3><p>${a.text}</p><div class=tg>${a.tags.map(t=>`<span>${t}</span>`).join('')}</div>
+ <div class=row><a class=btn href="${a.url}" target=_blank rel=noopener>Open app ↗</a><a class="btn ghost" href="${a.repo}" target=_blank rel=noopener>Source code</a></div></div></article>`).join('');
+function fit(){document.querySelectorAll('.pv').forEach(p=>{const f=p.querySelector('iframe');f.style.transform='scale('+(p.clientWidth/1200)+')'})}
+addEventListener('resize',fit);fit();
 </script>
 </main><script src="../assets/js/site.js"></script></body></html>
