@@ -14,6 +14,7 @@ footer{border-top:1px solid var(--line);margin-top:20px}
 .tm:hover{background:var(--yellow);color:#16162a}
 #up{position:fixed;right:22px;bottom:22px;width:48px;height:48px;border-radius:50%;border:0;background:var(--yellow);color:#16162a;font:700 22px/1 var(--sans);cursor:pointer;box-shadow:0 10px 26px rgba(22,22,42,.22);opacity:0;pointer-events:none;transform:translateY(10px);transition:.25s;z-index:20}
 #up.on{opacity:1;pointer-events:auto;transform:none}#up:hover{background:var(--blue)}
+.prose figure,.prose .wp-block-image{margin:28px auto;text-align:center}.prose img{display:block;max-width:100%;height:auto;margin:24px auto;border-radius:12px}.prose figure img{margin:0 auto}.prose figcaption{text-align:center;color:var(--mut);font-size:.9rem;margin-top:8px}
 .pn{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px;max-width:760px}
 .pn .card h3{font:600 1.05rem/1.35 'Hind Siliguri','Fraunces',serif}.pn .nx{text-align:right}
 @media(max-width:640px){.pn{grid-template-columns:1fr}}
