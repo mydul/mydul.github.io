@@ -1,56 +1,82 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Digital card — Mydul Islam</title><meta name="description" content="Save Mydul Islam's contact details."><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>M</text></svg>"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/css/site.css">
 <style>
-.dc{max-width:980px;margin:0 auto;background:var(--card,#fff);border-radius:32px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(22,22,42,.35);border:1px solid var(--line,#e8e0d4)}
-.dc .ban{height:230px;background:#16162a url(../assets/img/card-banner.webp) center/cover;position:relative}
-.dc .ban:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,22,42,.15),rgba(22,22,42,.55))}
-.dc .ban span{position:absolute;z-index:1;right:28px;bottom:18px;color:#fff;font:700 12px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;opacity:.9}
-.dc .body{display:grid;grid-template-columns:1fr 220px;gap:32px;padding:0 40px 40px}
-.dc .pic{width:168px;height:168px;border-radius:50%;border:6px solid var(--card,#fff);background:#f8c43c;margin-top:-84px;position:relative;z-index:2;object-fit:cover;box-shadow:0 12px 30px -8px rgba(0,0,0,.35);display:block}
-.dc h1{font-size:clamp(2.2rem,5vw,3.2rem);margin:18px 0 6px}
-.dc .role{font-weight:700;font-size:1.1rem;color:var(--ink)}
-.dc .sub{color:var(--mut,#8d8a9c);margin:4px 0 18px}
-.dc .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
-.dc .chips span{background:#f2ece3;color:#16162a;padding:7px 14px;border-radius:99px;font:600 13.5px 'DM Sans',sans-serif}
-.dc .acts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:460px}
-.dc .acts .btn{justify-content:center;text-align:center}
-.dc .side{text-align:center;padding-top:28px}
-.dc #qr{display:inline-block;padding:14px;background:#fff;border-radius:20px;box-shadow:0 8px 24px -10px rgba(0,0,0,.3)}
-.dc #qr img,.dc #qr canvas{display:block}
-.dc .side p{color:var(--mut,#8d8a9c);font-size:13px;margin-top:12px}
-.dc .soc2{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.dc .soc2 a{width:44px;height:44px;border-radius:50%;background:#f2ece3;color:#16162a;display:inline-flex;align-items:center;justify-content:center;font:700 11px 'DM Sans',sans-serif;transition:.2s}
-.dc .soc2 a i{font-size:18px}.dc .soc2 a:hover{background:#f8c43c;transform:translateY(-3px)}
-html[data-theme=dark] .dc .chips span,html[data-theme=dark] .dc .soc2 a{background:#26253a;color:#eee}
-html[data-theme=dark] .dc .soc2 a:hover{background:#f8c43c;color:#16162a}
-@media(max-width:760px){.dc .body{grid-template-columns:1fr;padding:0 22px 30px;gap:6px}.dc .ban{height:170px}.dc .pic{width:140px;height:140px;margin-top:-70px}.dc .side{padding-top:20px}.dc .acts{max-width:none}}
+.vc{max-width:900px;margin:0 auto;text-align:center}
+.flip{perspective:1600px;width:100%;aspect-ratio:7/4;cursor:pointer;position:relative}
+.fi{position:absolute;inset:0;transition:transform .8s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
+.flip.on .fi{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:26px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 40px 80px -30px rgba(22,22,42,.45),0 10px 24px -12px rgba(22,22,42,.3);text-align:left}
+.front{background:#fffaf0;display:grid;grid-template-columns:38% 1fr}
+.front .ph{position:relative;background:#f8c43c;overflow:hidden}
+.front .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.front .ph:after{content:"";position:absolute;right:0;top:0;bottom:0;width:8px;background:#16162a}
+.front .tx{padding:6% 7% 6% 8%;display:flex;flex-direction:column;justify-content:center;color:#16162a;position:relative}
+.front .lg{position:absolute;top:7%;right:7%;width:44px;height:44px;border-radius:50%;background:#16162a;color:#f8c43c;display:grid;place-items:center;font:700 22px Fraunces,serif}
+.front h2{font:700 clamp(1.7rem,5vw,3.1rem)/1.02 Fraunces,serif;margin:0 0 10px;letter-spacing:-.02em;color:#16162a}
+.front .rl{font:700 clamp(.95rem,1.9vw,1.2rem) 'DM Sans',sans-serif;color:#e8553f;margin-bottom:6px}
+.front .fd{font:500 clamp(.8rem,1.5vw,1rem) 'DM Sans',sans-serif;color:#5b5870;max-width:30ch;line-height:1.45}
+.front .ln{height:4px;width:56px;background:#f8c43c;border-radius:4px;margin:18px 0}
+.front .lc{font:600 clamp(.75rem,1.4vw,.95rem) 'DM Sans',sans-serif;color:#16162a;line-height:1.7}
+.back{transform:rotateY(180deg);background:#16162a;color:#fff;display:grid;grid-template-columns:1fr 36%;gap:4%;padding:6% 7%;align-items:center}
+.back:before{content:"";position:absolute;left:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;background:#f8c43c;opacity:.14}
+.back h3{font:700 clamp(1.3rem,3vw,2rem) Fraunces,serif;margin:0 0 14px;color:#f8c43c}
+.back ul{list-style:none;padding:0;margin:0;display:grid;gap:11px;position:relative}
+.back li{font:500 clamp(.8rem,1.6vw,1.05rem) 'DM Sans',sans-serif;display:flex;gap:10px;align-items:center;color:#f3efe6}
+.back li b{width:28px;height:28px;border-radius:50%;background:#f8c43c;color:#16162a;display:grid;place-items:center;font-size:13px;flex:none}
+.back a{color:inherit}
+.qrw{text-align:center}.qrw div#qr{display:inline-block;background:#fff;padding:12px;border-radius:18px;line-height:0}.qrw div#qr img,.qrw div#qr canvas{width:100%!important;height:auto!important;max-width:170px}
+.qrw p{font-size:12px;color:#c9c4d6;margin-top:10px}
+.hint{color:var(--mut,#8d8a9c);font-size:13px;margin:16px 0 22px}
+.acts{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.soc2{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;justify-content:center}
+.soc2 a{width:46px;height:46px;border-radius:50%;background:#f2ece3;color:#16162a;display:inline-flex;align-items:center;justify-content:center;font:700 11px 'DM Sans',sans-serif;transition:.2s}
+.soc2 a i{font-size:19px}.soc2 a:hover{background:#f8c43c;transform:translateY(-3px)}
+html[data-theme=dark] .soc2 a{background:#26253a;color:#eee}html[data-theme=dark] .soc2 a:hover{background:#f8c43c;color:#16162a}
+@media(max-width:640px){.flip{aspect-ratio:auto;height:auto}.fi{position:relative;display:block;height:520px}.face{border-radius:22px}.front{grid-template-columns:1fr;grid-template-rows:44% 1fr}.front .ph:after{right:0;left:0;top:auto;bottom:0;width:auto;height:6px}.front .ph img{object-position:50% 25%}.front .tx{padding:20px 22px}.front .lg{top:-24px;right:22px;z-index:2}.front h2{font-size:2rem}.front .ln{margin:12px 0}.back{grid-template-columns:1fr;gap:18px;padding:26px 24px;align-content:center}.qrw div#qr{max-width:150px}}
 </style></head><body data-root="../"><main class="wrap">
-<div class=dc>
- <div class=ban><span>Digital card</span></div>
- <div class=body>
-  <div>
-   <img class=pic src="../assets/img/card-portrait.webp" alt="Mydul Islam" width=168 height=168>
-   <h1>Mydul Islam</h1>
-   <div class=role>Technical Project Manager</div>
-   <p class=sub>Semiconductor R&amp;D &amp; Sensor Product Development</p>
-   <div class=chips><span>📍 Stuttgart, Germany</span><span>🏢 Magnetic Sense GmbH</span><span>🗣 Bengali · English · German</span></div>
-   <div class=acts>
-    <button class=btn id=vc>⬇ Save contact</button>
-    <a class=btn href=mailto:islam@mydul.me>✉ Email</a>
-    <!--
-    <a class="btn ghost" href=https://www.linkedin.com/in/mydul/>LinkedIn</a>
-    <a class="btn ghost" href=https://www.mydul.me>Website</a>
-    -->
+<div class=vc>
+ <p class=kicker>Digital card</p>
+ <div class=flip id=flip role=button tabindex=0 aria-label="Flip card">
+  <div class=fi>
+   <div class="face front">
+    <div class=ph><img src="../assets/img/card-portrait.webp" alt="Mydul Islam"></div>
+    <div class=tx>
+     <div class=lg>M</div>
+     <h2>Mydul<br>Islam</h2>
+     <div class=rl>Technical Project Manager</div>
+     <div class=fd>Semiconductor R&amp;D &amp; Sensor Product Development</div>
+     <div class=ln></div>
+     <div class=lc>Magnetic Sense GmbH<br>Stuttgart, Germany<br>Bengali · English · German</div>
+    </div>
    </div>
-   <div class=soc2 id=soc2></div>
+   <div class="face back">
+    <div>
+     <h3>Let’s connect</h3>
+     <ul>
+      <li><b>✉</b><a href="mailto:islam@mydul.me">islam@mydul.me</a></li>
+      <li><b>🌐</b><a href="https://www.mydul.me">www.mydul.me</a></li>
+      <li><b>in</b><a href="https://www.linkedin.com/in/mydul/">linkedin.com/in/mydul</a></li>
+      <li><b>📍</b>Stuttgart, Germany</li>
+     </ul>
+    </div>
+    <div class=qrw><div id=qr></div><p>Scan to open this card</p></div>
+   </div>
   </div>
-  <div class=side><div id=qr></div><p>Scan to open this card</p></div>
  </div>
+ <p class=hint>Tap the card to flip it</p>
+ <div class=acts>
+  <button class=btn id=vcb>⬇ Save contact</button>
+  <a class=btn href=mailto:islam@mydul.me>✉ Email</a>
+ </div>
+ <div class=soc2 id=soc2></div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 const S=[['https://www.facebook.com/mydul.me','Facebook','bi-facebook'],['https://x.com/mydulii','X','bi-twitter-x'],['https://www.instagram.com/mydul.me/','Instagram','bi-instagram'],['https://www.linkedin.com/in/mydul/','LinkedIn','bi-linkedin'],['https://www.researchgate.net/profile/Md-Mydul-Islam-3','ResearchGate','RG'],['https://ieee-collabratec.ieee.org/app/p/mydul','IEEE Collabratec','IEEE'],['https://scholar.google.com/citations?user=bWTmly8AAAAJ&hl=en','Google Scholar','bi-mortarboard-fill'],['https://github.com/mydul','GitHub','bi-github']];
 document.getElementById('soc2').innerHTML=S.map(s=>`<a href="${s[0]}" target="_blank" rel="noopener" aria-label="${s[1]}" title="${s[1]}">${s[2].startsWith('bi-')?`<i class="bi ${s[2]}"></i>`:s[2]}</a>`).join('');
-try{new QRCode(document.getElementById('qr'),{text:'https://www.mydul.me/card/',width:168,height:168,colorDark:'#16162a',colorLight:'#ffffff'});}catch(e){}
-document.getElementById('vc').onclick=()=>{const t='BEGIN:VCARD\nVERSION:3.0\nN:Islam;Md Mydul;;;\nFN:Md Mydul Islam\nORG:Magnetic Sense GmbH\nTITLE:Technical Project Manager\nTEL;TYPE=CELL:+4915901390177\nEMAIL:islam@mydul.me\nURL:https://www.mydul.me\nADR;TYPE=WORK:;;;Stuttgart;;;Germany\nEND:VCARD',a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t],{type:'text/vcard'}));a.download='Mydul-Islam.vcf';a.click();};
+try{new QRCode(document.getElementById('qr'),{text:'https://www.mydul.me/card/',width:170,height:170,colorDark:'#16162a',colorLight:'#ffffff'});}catch(e){}
+const f=document.getElementById('flip');
+f.addEventListener('click',e=>{if(e.target.closest('a'))return;f.classList.toggle('on')});
+f.addEventListener('keydown',e=>{if(e.key=='Enter'||e.key==' '){e.preventDefault();f.classList.toggle('on')}});
+document.getElementById('vcb').onclick=()=>{const t='BEGIN:VCARD\nVERSION:3.0\nN:Islam;Md Mydul;;;\nFN:Md Mydul Islam\nORG:Magnetic Sense GmbH\nTITLE:Technical Project Manager\nTEL;TYPE=CELL:+4915901390177\nEMAIL:islam@mydul.me\nURL:https://www.mydul.me\nADR;TYPE=WORK:;;;Stuttgart;;;Germany\nEND:VCARD',a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t],{type:'text/vcard'}));a.download='Mydul-Islam.vcf';a.click();};
 </script>
 </main><script src="../assets/js/site.js"></script></body></html>
