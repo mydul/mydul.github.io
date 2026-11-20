@@ -14,7 +14,7 @@ function render(){
  const q=norm(Q).trim(),words=q.split(/\s+/).filter(Boolean);
  const R=POSTS.filter(x=>(!C||(x.c||[]).includes(C))&&words.every(w=>x._s.includes(w)));
  const pages=Math.max(1,Math.ceil(R.length/PER));P=Math.min(Math.max(P,1),pages);
- $('rc').textContent=(Q||C)?R.length+' result'+(R.length==1?'':'s')+(C?' in “'+C+'”':'')+(Q?' for “'+Q+'”':''):POSTS.length+' posts on project management, nanotech and Bengali writing.';
+ $('rc').textContent=(Q||C)?R.length+' result'+(R.length==1?'':'s')+(C?' in “'+C+'”':'')+(Q?' for “'+Q+'”':''):POSTS.length+' posts on project management, Nanotech, Technology, Bengali Literature and many more';
  $('lead').textContent='';
  $('list').innerHTML=R.length?R.slice((P-1)*PER,P*PER).map(x=>`<a class=card href="${x.u}"><span class=meta>${x.d}</span><h3>${x.t}</h3>${x.x?`<p>${x.x}…</p>`:''}${(x.c||[]).map(c=>`<span class=tag>${c}</span>`).join('')}</a>`).join(''):'<p class=none>No posts found. Try another word or category.</p>';
  let h='',last=0;
