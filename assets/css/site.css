@@ -67,11 +67,11 @@ footer{padding:60px 5vw 40px}
 .fine{max-width:1500px;margin:36px auto 0;font-size:13px;color:var(--mut)}
 @media(max-width:860px){.hero .in,.help,.about,.band,.fg{grid-template-columns:1fr}.me{max-width:320px}.help .cs>:nth-child(even){margin-top:0}.sec{padding:60px 5vw}.logo+nav a:not(.pill){padding:6px 8px;font-size:14px}}
 
-/* ── Worked & studied at: bigger logos and names ── */
+/* ── Worked & studied at: bigger logos and names, aligned ── */
 .strip{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:20px 36px}
-.strip small{font-size:13px;letter-spacing:1.2px}
-.strip span{font-size:16px;font-weight:600;gap:10px}
-.strip span img{width:36px;height:36px}
+.strip small{font-size:13px;letter-spacing:1.2px;line-height:1}
+.strip span{display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:600;line-height:1;white-space:nowrap}
+.strip span img{width:36px;height:36px;margin:0;flex:none;display:block}
 .strip + .strip{margin-top:22px;padding-top:20px}
 
 @media (max-width:560px){
