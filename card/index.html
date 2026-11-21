@@ -83,7 +83,7 @@ document.getElementById('vcb').onclick=async()=>{
  let photo='';
  try{const r=await fetch('../assets/img/contact-photo.jpg');const b=await r.blob();
   photo=await new Promise(ok=>{const fr=new FileReader();fr.onload=()=>ok(String(fr.result).split(',')[1]||'');fr.onerror=()=>ok('');fr.readAsDataURL(b)})}catch(e){}
- const L=['BEGIN:VCARD','VERSION:3.0','N:Islam;Md Mydul;;;','FN:Md Mydul Islam','ORG:Magnetic Sense GmbH','TITLE:Technical Project Manager','TEL;TYPE=CELL:+4915901390177','EMAIL:islam@mydul.me','URL:https://www.mydul.me','ADR;TYPE=WORK:;;;Stuttgart;;;Germany'];
+ const L=['BEGIN:VCARD','VERSION:3.0','N:Islam;Mydul;;;','FN:Mydul Islam','ORG:Magnetic Sense GmbH','TITLE:Technical Project Manager','TEL;TYPE=CELL:+4915901390177','EMAIL:islam@mydul.me','URL:https://www.mydul.me','ADR;TYPE=WORK:;;;Stuttgart;;;Germany'];
  if(photo)L.push('PHOTO;ENCODING=b;TYPE=JPEG:'+photo);
  L.push('END:VCARD');
  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([L.map(fold).join('\r\n')+'\r\n'],{type:'text/vcard'}));a.download='Mydul-Islam.vcf';a.click();};
