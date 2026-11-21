@@ -1,9 +1,142 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Projects — Mydul Islam</title><meta name="description" content="Case studies from nanofabrication and electronics research."><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>M</text></svg>"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/css/site.css"></head><body data-root="../"><main class="wrap">
-<p class=kicker>Work</p><h1>Project <em>case studies</em></h1>
-<p class=lead>Problem, approach and result for three research projects.</p>
-<div class=grid>
-<a class=card href=thz-metamaterial-sensor.html><span class=meta>M.Sc. thesis</span><h3>THz metamaterial microfluidic biosensor</h3><span class=tag>THz</span><span class=tag>Cleanroom</span><span class=tag>PDMS</span></a>
-<a class=card href=graphene-fet.html><span class=meta>Lab project</span><h3>Graphene field-effect transistor</h3><span class=tag>CVD</span><span class=tag>Lithography</span></a>
-<a class=card href=memristor-thesis.html><span class=meta>B.Sc. thesis</span><h3>Memristor window functions and logic gates</h3><span class=tag>CMOS</span><span class=tag>Modelling</span></a>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Projects — Mydul Islam</title><meta name="description" content="Research papers, theses and lab projects in electronics, nanofabrication and sensors."><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>M</text></svg>"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/css/site.css">
+<style>
+.pf{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 30px}
+.pf button{border:0;cursor:pointer;padding:9px 18px;border-radius:99px;background:#f2ece3;color:#16162a;font:600 14px var(--sans);transition:.2s}
+.pf button:hover{background:var(--yellow)}.pf button.on{background:#16162a;color:#fff}
+html[data-theme=dark] .pf button{background:#26253a;color:#eee}html[data-theme=dark] .pf button.on{background:var(--yellow);color:#16162a}
+.pj{background:var(--card);border:1px solid var(--line);border-radius:28px;margin-bottom:26px;overflow:hidden;box-shadow:0 22px 50px -34px rgba(22,22,42,.4)}
+.pj>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:26px 30px}
+.pj>summary::-webkit-details-marker{display:none}
+.pj .bd{width:62px;height:62px;border-radius:20px;display:grid;place-items:center;font-size:28px;background:var(--ac,var(--yellow))}
+.pj h3{font:700 clamp(1.25rem,2.4vw,1.75rem)/1.2 var(--serif);margin:4px 0 0}
+.pj .ty{font:700 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
+.pj .sm{color:var(--ink2);margin:6px 0 0;font-size:15px}
+.pj .ar{width:42px;height:42px;border-radius:50%;background:#f2ece3;display:grid;place-items:center;font-size:18px;transition:.3s;color:#16162a}
+.pj[open] .ar{transform:rotate(180deg);background:var(--yellow)}
+html[data-theme=dark] .pj .ar{background:#26253a;color:#eee}
+.pj .in2{display:grid;grid-template-columns:290px 1fr;gap:0;border-top:1px solid var(--line)}
+.pj .mt{padding:28px 26px;background:var(--bg);border-right:1px solid var(--line)}
+.pj .mt dl{margin:0;display:grid;gap:18px}.pj .mt dt{font:700 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:4px}
+.pj .mt dd{margin:0;font-size:14.5px;line-height:1.5;color:var(--ink)}.pj .mt dd small{display:block;color:var(--mut);font-size:13px}
+.pj .mt .tg{display:flex;flex-wrap:wrap;gap:6px}.tg span{font:600 12px var(--sans);background:var(--card);border:1px solid var(--line);padding:5px 10px;border-radius:99px}
+.pj .ct{padding:30px 34px 34px;display:grid;gap:26px}
+.pj .sc h4{font:700 12px var(--sans);letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px;display:flex;align-items:center;gap:10px;color:var(--ink)}
+.pj .sc h4 i{font-style:normal;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:var(--c,var(--yellow));font-size:15px}
+.pj .sc p{margin:0;color:var(--ink2);line-height:1.7;font-size:15.5px}.pj .sc ul{margin:0;padding-left:20px;color:var(--ink2);line-height:1.7;font-size:15.5px}.pj .sc li{margin-bottom:5px}
+.pj .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.pj .box{border:1px solid var(--line);border-radius:18px;padding:16px 18px;background:var(--bg)}
+.pj .box b{display:block;margin-bottom:8px;font-size:14px}.pj .box .tg{display:flex;flex-wrap:wrap;gap:6px}
+.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.cmp th,.cmp td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}.cmp tr:last-child td{border-bottom:0}
+.cmp thead th{background:#16162a;color:#fff;font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase}.cmp td:first-child{font-weight:700;width:18%}.cmp td{color:var(--ink2)}
+.cmp tbody tr:nth-child(even){background:var(--bg)}
+.kp{background:linear-gradient(135deg,#16162a,#26253a);color:#fff;border-radius:20px;padding:22px 26px}.kp h4{color:var(--yellow)!important}.kp ul{color:#eee!important}.kp li::marker{color:var(--yellow)}
+.mini{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.mc{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 24px;display:flex;flex-direction:column;gap:8px;transition:.25s}
+.mc:hover{transform:translateY(-4px);box-shadow:0 20px 40px -26px rgba(22,22,42,.4)}.mc .ty{font:700 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
+.mc h3{font:700 1.15rem/1.25 var(--serif);margin:0}.mc ul{margin:4px 0 0;padding-left:18px;color:var(--ink2);font-size:14.5px;line-height:1.6}
+.mc .tg{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
+.link{font-weight:700;font-size:14px;color:var(--ink);margin-top:6px;display:inline-block}.link:hover{color:var(--coral)}
+.sech{margin:46px 0 6px}
+@media(max-width:860px){.pj .in2{grid-template-columns:1fr}.pj .mt{border-right:0;border-bottom:1px solid var(--line)}.pj .mt dl{grid-template-columns:1fr 1fr}.pj .two{grid-template-columns:1fr}.pj>summary{grid-template-columns:auto 1fr;padding:20px}.pj .ar{display:none}.pj .ct{padding:24px 20px}.cmp{font-size:13px}}
+@media(max-width:560px){.pj .mt dl{grid-template-columns:1fr}.cmp thead{display:none}.cmp,.cmp tbody,.cmp tr,.cmp td{display:block;width:100%}.cmp tr{border-bottom:1px solid var(--line);padding:8px 0}.cmp td{border:0;padding:4px 14px}.cmp td:first-child{width:100%;color:var(--ink);font-size:15px}.cmp td:nth-child(2):before{content:"Proprietary: ";font-weight:700;color:var(--ink)}.cmp td:nth-child(3):before{content:"Open source: ";font-weight:700;color:var(--ink)}}
+</style></head><body data-root="../"><main class="wrap">
+<p class=kicker>Work</p><h1>Projects &amp; <em>research</em></h1>
+<p class=lead>Papers, theses and lab projects from electronics, nanofabrication and sensors. Open a project to read the short version: what it was about, how it was done and what came out.</p>
+<div class=pf id=pf><button class=on data-f="all">All</button><button data-f="paper">Journal paper</button><button data-f="thesis">Thesis</button><button data-f="lab">Lab projects</button><button data-f="side">Side projects</button></div>
+
+<div id=list>
+<!-- ═════ FULL WRITE-UP: EDA SURVEY ═════ -->
+<details class=pj data-t="paper" open style="--ac:var(--blue)">
+<summary><span class=bd>📄</span><div><span class=ty>Journal paper · Co-author</span><h3>Survey on Electrical Design Automation Tools and Software</h3><p class=sm>A guided comparison of free/open-source and proprietary EDA tools.</p></div><span class=ar>⌄</span></summary>
+<div class=in2>
+<aside class=mt><dl>
+<div><dt>Where</dt><dd>Green University of Bangladesh<small>Dhaka, Bangladesh</small></dd></div>
+<div><dt>When</dt><dd>February 2017</dd></div>
+<div><dt>Published in</dt><dd>GUB Journal of Science and Engineering (GUBJSE), Vol. 1, Issue 1<small>Green University Press · ISSN 2409-0476</small></dd></div>
+<div><dt>Team</dt><dd>Md. Hasan Maruf<small>lead author</small>Md. Mydul Islam<small>co-author</small>Faysal Al Mahmud<small>co-author</small></dd></div>
+<!-- SUPERVISOR: add a line like <div><dt>Supervision</dt><dd>Name<small>Title, Department</small></dd></div> -->
+<div><dt>Type</dt><dd>Literature and tool survey (desk study, no lab experiments)</dd></div>
+<div><dt>Keywords</dt><dd class=tg><span>EDA</span><span>VLSI</span><span>FPGA</span><span>Open source</span><span>Layout</span><span>Simulation</span></dd></div>
+</dl></aside>
+<div class=ct>
+<section class=sc style="--c:var(--yellow)"><h4><i>🧾</i>Abstract</h4><p>The paper surveys the software tools used in electronic design automation (EDA), across operating systems and platforms. It sorts the tools by the task they serve and then compares the two development models, free/open-source and proprietary software, on the features that matter when choosing a tool.</p></section>
+<section class=sc style="--c:var(--blue)"><h4><i>🚪</i>Introduction</h4><p>Integrated circuits keep growing in complexity at an exponential rate. Early geometric design software could not keep to the layer limits of complex circuits, so performance dropped. EDA tools were built to solve this. They cover design from system level down to layout, with their own synthesis, verification and analysis tool sets, and many companies keep extending them.</p></section>
+<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>There are many EDA tools, and they differ a lot. Free tools rarely cover every step, so users combine several of them. Proprietary suites cover more but come with licences and cost. Engineers and students need a clear picture of what each kind can and cannot do before they pick one.</p></section>
+<section class=sc style="--c:var(--green)"><h4><i>✨</i>What's new</h4><ul><li>One overview that groups the tools by function and by licence type.</li><li>A side-by-side comparison of open-source and proprietary tools on seven criteria.</li><li>Practical notes on which free tool fits which task, for example synthesis, physical layout or FPGA work.</li></ul></section>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><p style="margin-bottom:14px">Tools were first classified by function (schematic entry, PCB design, simulation, Gerber viewing and so on) and then split into two licence groups. The free group was divided into three areas:</p>
+<div class=two>
+<div class=box><b>Open-source: synthesis</b><div class=tg><span>ICARUS Verilog</span><span>Verilator</span><span>GHDL</span><span>KiCad</span><span>PLA / gate-array generators</span><span>Compactors &amp; routers</span></div></div>
+<div class=box><b>Open-source: physical layout</b><div class=tg><span>Magic</span><span>Microwind</span><span>Alliance CAD</span><span>Electric</span><span>Tanner</span><span>Toped</span></div></div>
+<div class=box><b>Open-source: FPGA &amp; simulation</b><div class=tg><span>Xilinx ISE WebPACK</span><span>Altera Quartus II</span><span>Fizzim</span><span>Fedora Electronic Lab</span><span>TCE</span><span>QUCS</span></div></div>
+<div class=box><b>Proprietary suites</b><div class=tg><span>Synopsys</span><span>Cadence</span><span>Mentor Graphics</span><span>Tina</span><span>NI Circuit Design Suite</span></div></div>
+</div></section>
+<section class=sc style="--c:var(--blue)"><h4><i>🔬</i>Evaluation</h4><p>This is a survey, so there was no lab experiment. Each tool family was described by its purpose and typical use. The two licence models were then compared on development, support, flexibility, cost, features, accuracy and efficiency.</p></section>
+<section class=sc style="--c:var(--yellow)"><h4><i>📊</i>Findings</h4>
+<table class=cmp><thead><tr><th>Criterion</th><th>Proprietary</th><th>Open source / free</th></tr></thead><tbody>
+<tr><td>Development</td><td>Handled by the vendor, at its discretion.</td><td>Community collaboration, lasts while the community is active.</td></tr>
+<tr><td>Support</td><td>Manuals, FAQs and a contact point.</td><td>Limited, often no organised support.</td></tr>
+<tr><td>Flexibility</td><td>As much as the vendor allows.</td><td>Can be modified and extended.</td></tr>
+<tr><td>Cost</td><td>Licence fee.</td><td>No cost.</td></tr>
+<tr><td>Features</td><td>Maximum features and a polished interface.</td><td>No single tool offers everything.</td></tr>
+<tr><td>Accuracy</td><td>Usually higher.</td><td>Not always fully accurate.</td></tr>
+<tr><td>Efficiency</td><td>Consistently better.</td><td>Average.</td></tr>
+</tbody></table></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul>
+<li>EDA tools split into two licence groups: proprietary and free/open-source.</li>
+<li>Proprietary suites (Synopsys, Cadence, Mentor Graphics) lead on features, accuracy, efficiency and support.</li>
+<li>Free tools cost nothing and can be modified, but you often need several of them to cover a full design flow.</li>
+<li>The best choice depends on the user's needs, budget and how much support and accuracy the project requires.</li>
+</ul></section>
+</div></div></details>
+
+<!-- ═════ THESES & LAB ═════ -->
+<details class=pj data-t="thesis" style="--ac:var(--coral)"><summary><span class=bd>🎓</span><div><span class=ty>M.Sc. thesis</span><h3>THz metamaterial microfluidic biosensor chip</h3><p class=sm>A label-free sensor chip for tiny liquid samples, fabricated and measured at THz frequencies.</p></div><span class=ar>⌄</span></summary>
+<div class=in2><aside class=mt><dl>
+<div><dt>Where</dt><dd>University of Siegen<small>Institute of High Frequency and Quantum Electronics</small></dd></div>
+<div><dt>When</dt><dd>Completed May 2023</dd></div>
+<div><dt>Tools</dt><dd class=tg><span>Photolithography</span><span>RIE</span><span>Lift-off</span><span>CVD / PVD</span><span>PDMS</span><span>THz-TDS</span></dd></div></dl></aside>
+<div class=ct>
+<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>Biosensing needs a sensitive, label-free readout. THz waves react strongly to liquids, but water absorbs them heavily, so the liquid volume must be tiny and well controlled.</p></section>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Fabricated metamaterial sensors in the cleanroom with photolithography, plasma/RIE etching, lift-off, and CVD/PVD deposition.</li><li>Built the microfluidic layer by soft imprinting with PDMS and TMCS surface treatment.</li><li>Checked quality with optical microscopy and profilometry, and measured with THz frequency-domain spectroscopy.</li></ul></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Working chips were fabricated and measured at THz frequencies.</li><li>The soft-imprint approach was developed independently.</li><li>The thesis was graded Very Good.</li></ul><a class=link style="color:var(--yellow)" href=thz-metamaterial-sensor.html>Open the case study →</a></section>
+</div></div></details>
+
+<details class=pj data-t="thesis" style="--ac:var(--green)"><summary><span class=bd>🧠</span><div><span class=ty>B.Sc. thesis</span><h3>Memristor: window functions and logic gates</h3><p class=sm>A comparison of memristor window functions and hybrid CMOS/memristor logic gates.</p></div><span class=ar>⌄</span></summary>
+<div class=in2><aside class=mt><dl>
+<div><dt>Where</dt><dd>Green University of Bangladesh<small>Electrical and Electronic Engineering</small></dd></div>
+<div><dt>When</dt><dd>Completed May 2016</dd></div>
+<div><dt>Tools</dt><dd class=tg><span>Simulation</span><span>MRL</span><span>CMOS</span></dd></div></dl></aside>
+<div class=ct>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Compared window functions that model the memristor's boundary behaviour.</li><li>Designed logic gates in memristor ratioed logic (MRL) style.</li><li>Built a hybrid CMOS/memristor cell for universal logic gates.</li></ul></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>An XOR gate in the hybrid design was comparable to a CMOS implementation.</li><li>The thesis covered both the device model and circuit-level logic design.</li></ul><a class=link style="color:var(--yellow)" href=memristor-thesis.html>Open the case study →</a></section>
+</div></div></details>
+
+<details class=pj data-t="lab" style="--ac:var(--yellow)"><summary><span class=bd>⚡</span><div><span class=ty>Lab project · M.Sc.</span><h3>Graphene field-effect transistor (GFET)</h3><p class=sm>From CVD-grown graphene to a working transistor and its mobility measurement.</p></div><span class=ar>⌄</span></summary>
+<div class=in2><aside class=mt><dl>
+<div><dt>Where</dt><dd>University of Siegen<small>Cleanroom and research labs</small></dd></div>
+<div><dt>Tools</dt><dd class=tg><span>CVD</span><span>Optical lithography</span><span>PVD evaporation</span></dd></div></dl></aside>
+<div class=ct>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Grew graphene by chemical vapour deposition.</li><li>Patterned devices by optical lithography and deposited thin films by evaporation (PVD).</li><li>Measured carrier mobility and transconductance of the finished device.</li></ul></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Covered the full chain: material growth, device fabrication and electrical characterisation.</li></ul><a class=link style="color:var(--yellow)" href=graphene-fet.html>Open the case study →</a></section>
+</div></div></details>
 </div>
+
+<h2 class=sech>More lab and side projects</h2>
+<div class=mini id=mini></div>
+<script>
+const MORE=[
+ {t:'lab',ty:'Lab project',h:'Cross-sectioning fuel cells (ultramicrotome)',u:['Cross-sectioned PEM fuel cells for TEM analysis.','Researched diamond and glass knife angles; checked by optical microscopy.','Designed and built a glass knife boat.'],g:['TEM','Sample prep']},
+ {t:'lab',ty:'Lab project',h:'SEM and AFM visualisation',u:['Atomic force and scanning electron microscopy.','Visualised surface charge at the nanoscale.'],g:['SEM','AFM']},
+ {t:'lab',ty:'Lab project',h:'Super-paramagnetic iron oxide nanoparticles',u:['Synthesised the particles and analysed them by X-ray diffraction.','Applied Bragg’s law and the Debye–Scherrer method to the crystal structure.'],g:['XRD','Synthesis']},
+ {t:'lab',ty:'Lab project',h:'Surface plasmon resonance sensing',u:['Graphical analysis of the water–gold interface.','Measured P- and S-polarised light; Otto and Kretschmann configurations.'],g:['SPR','Optics']},
+ {t:'lab',ty:'Lab project',h:'X-ray fluorescence (XRF)',u:['Energy- and wavelength-dispersive XRF analysis.','Energy calibration of the SDD and qualitative multi-element analysis.'],g:['XRF']},
+ {t:'lab',ty:'Lab project',h:'Nanomaterials for supercapacitors',u:['Capacitance distribution and charge/discharge profiles of supercapacitor variants.','Nanoporous anodic aluminium oxide films.'],g:['AAO','Energy storage']},
+ {t:'lab',ty:'Lab project',h:'GFET mobility and transconductance',u:['Graphene properties and applications.','Mobility and transconductance analysis of the transistor.'],g:['Graphene','Measurement']},
+ {t:'side',ty:'Undergraduate project',h:'Arithmetic logic unit (ALU)',u:['Designed and implemented an ALU for several computational tasks.'],g:['Digital design']},
+ {t:'side',ty:'Undergraduate project',h:'Quad-copter and Android line-follower robot',u:['Built and programmed a quad-copter for aerial surveillance.','Autonomous Android-based car robot for line following and obstacle detection.'],g:['Embedded','Robotics']}
+];
+document.getElementById('mini').innerHTML=MORE.map(m=>`<article class=mc data-t="${m.t}"><span class=ty>${m.ty}</span><h3>${m.h}</h3><ul>${m.u.map(x=>`<li>${x}</li>`).join('')}</ul><div class=tg>${m.g.map(x=>`<span>${x}</span>`).join('')}</div></article>`).join('');
+const pf=document.getElementById('pf');
+pf.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;pf.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));const f=b.dataset.f;document.querySelectorAll('.pj,.mc').forEach(c=>c.style.display=(f=='all'||c.dataset.t==f)?'':'none');document.querySelector('.sech').style.display=(f=='all'||f=='lab'||f=='side')?'':'none'});
+</script>
 </main><script src="../assets/js/site.js"></script></body></html>
