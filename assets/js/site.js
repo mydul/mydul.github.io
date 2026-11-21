@@ -1,7 +1,7 @@
 (()=>{const D=document,r=D.body.dataset.root||'';D.querySelectorAll('link[rel~=icon]').forEach(e=>e.remove());[['icon','image/png','favicon-32.png'],['apple-touch-icon','','apple-touch-icon.png']].forEach(([a,t,f])=>{const l=D.createElement('link');l.rel=a;if(t)l.type=t;l.href=r+f;D.head.appendChild(l)});const p=location.pathname,
 L=[['Home',''],['Blog','blog/'],['Projects','projects/'],['Tools','tools/'],['Resume','resume/']],
 m=L.find(x=>x[1]&&p.includes('/'+x[1]))||L[0],
-S=[['https://www.facebook.com/mydul.me','Facebook','bi-facebook'],['https://x.com/mydulii','X','bi-twitter-x'],['https://www.instagram.com/mydul.me/','Instagram','bi-instagram'],['https://www.linkedin.com/in/mydul/','LinkedIn','bi-linkedin'],['https://www.researchgate.net/profile/Md-Mydul-Islam-3','ResearchGate','RG'],['https://ieee-collabratec.ieee.org/app/p/mydul','IEEE Collabratec','IEEE'],['https://scholar.google.com/citations?user=bWTmly8AAAAJ&hl=en','Google Scholar','bi-mortarboard-fill'],['https://github.com/mydul','GitHub','bi-github']];
+S=[['https://www.facebook.com/mydul.me','Facebook','bi-facebook'],['https://x.com/mydulii','X','bi-twitter-x'],['https://www.instagram.com/mydul.me/','Instagram','bi-instagram'],['https://www.linkedin.com/in/mydul/','LinkedIn','bi-linkedin'],['https://scholar.google.com/citations?user=bWTmly8AAAAJ&hl=en','Google Scholar','bi-mortarboard-fill'],['https://github.com/mydul','GitHub','bi-github']];
 const CSS=`
 .fg{align-items:start}
 .fg .soc{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;max-width:480px}
