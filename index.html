@@ -88,42 +88,32 @@ html[data-theme=dark] .tile .tg span{background:#26253a}
 </div></div></section> 
 -->
 
-<section class="sec bring"><div class="in">
 <style>
-.bring .bh{display:grid;grid-template-columns:1.1fr 1fr;gap:5vw;align-items:end;margin-bottom:34px}
-.bring .bh p{margin:0;color:var(--ink2);font-size:1.08rem;max-width:60ch}
-.bring .st{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
-.bring .st div{background:linear-gradient(135deg,#16162a,#26253a);color:#fff;border-radius:22px;padding:20px 22px}
-.bring .st b{display:block;font:700 clamp(1.9rem,3.4vw,2.7rem)/1 var(--serif);color:var(--yellow);margin-bottom:6px}
-.bring .st span{font-size:14px;line-height:1.45;color:#e4e2ef}
-.bring .bg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.bring .bc{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--ac);border-radius:24px;padding:26px 26px 28px;transition:.25s}
-.bring .bc:hover{transform:translateY(-5px);box-shadow:0 22px 44px -28px rgba(22,22,42,.45)}
-.bring .bc i{font-style:normal;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--ac);font-size:25px;margin-bottom:16px}
-.bring .bc h3{font:700 1.2rem/1.25 var(--serif);margin:0 0 8px}
-.bring .bc p{margin:0;color:var(--ink2);font-size:15px;line-height:1.65}
-.bring .cta{margin-top:32px;display:flex;flex-wrap:wrap;gap:6px 0}
-@media(max-width:980px){.bring .bh{grid-template-columns:1fr;gap:12px}.bring .st{grid-template-columns:repeat(2,1fr)}.bring .bg{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.bring .bg{grid-template-columns:1fr}.bring .bc{padding:22px}}
+.bring .stt{display:grid;grid-template-columns:1fr 1fr;gap:20px 26px;background:#fff;border-radius:24px;padding:26px 30px;box-shadow:0 24px 60px rgba(22,22,42,.08);margin:6px 0 26px;max-width:460px}
+html[data-theme=dark] .bring .stt{background:var(--card)}
+.bring .stt b{display:block;font:600 clamp(1.9rem,3vw,2.5rem)/1.1 var(--serif);margin-bottom:4px}
+.bring .stt div>span{font-size:13.5px;line-height:1.4;color:var(--ink2);display:block}
+.bring .cs>.card{transition:.25s}
+.bring .cs>.card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(22,22,42,.1)}
+.bring .cta{display:flex;flex-wrap:wrap}
 </style>
-<div class="bh"><div><p class="kicker">Work</p><h2 style="margin:0">What I <span class="hb">bring</span> to a team</h2></div>
-<p>Over three years I have led R&amp;D projects for magnetic sensor technology in an international team, from first idea to customer-ready samples. This is what that experience adds to a company.</p></div>
-<div class="st">
-<div><b>3+</b><span>years leading R&amp;D projects</span></div>
-<div><b>2</b><span>projects that led to a patent</span></div>
-<div><b>10–15</b><span>contributors per project</span></div>
-<div><b>10%</b><span>less project hours and cost for the same output</span></div>
+<section class="sec bring"><div class="in help"><div><p class="kicker">Work</p><h2 style="margin-top:0;font-size:clamp(2.4rem,4vw,3.6rem)">What I <span class="hb">bring</span> to a team</h2><p class="lead">Over three years I have led R&amp;D projects for magnetic sensor technology in an international team, from first idea to customer-ready samples.</p>
+<div class="stt">
+<div><b><span class="hl">3+</span></b><span>years leading R&amp;D projects</span></div>
+<div><b><span class="hl">2</span></b><span>projects that led to a patent</span></div>
+<div><b><span class="hl">10–15</span></b><span>contributors per project</span></div>
+<div><b><span class="hl">10%</span></b><span>less hours and cost for the same output</span></div>
 </div>
-<div class="bg">
-<div class="bc" style="--ac:var(--coral)"><i>🚀</i><h3>Idea to handover</h3><p>I run projects through concept, proof of concept, design verification and handover to product development.</p></div>
-<div class="bc" style="--ac:var(--blue)"><i>🛡️</i><h3>Protected results</h3><p>Two of my projects led to a patent. One reached a customer-ready sample, and several prototypes were validated through testing.</p></div>
-<div class="bc" style="--ac:var(--green)"><i>👥</i><h3>Cross-functional teams</h3><p>I lead simulation, hardware, firmware, testing, procurement and sales, with about five projects in parallel today.</p></div>
-<div class="bc" style="--ac:var(--purple)"><i>⚙️</i><h3>Agile and waterfall</h3><p>I use Scrum with Azure DevOps and classic planning with Smartsheet, depending on what the project needs.</p></div>
-<div class="bc" style="--ac:var(--yellow)"><i>💶</i><h3>Cost and supplier focus</h3><p>Budget and effort control, design-to-cost thinking and daily work with suppliers in Europe and Asia.</p></div>
-<div class="bc" style="--ac:var(--blue)"><i>📑</i><h3>Funding and documentation</h3><p>I prepare evidence for public R&amp;D funding and keep plans, hours and costs consistent.</p></div>
-</div>
-<div class="cta"><a class="btn dark" href="projects/">See my projects</a><a class="btn ghost" href="resume/">View resume</a></div>
-</div></section>
+<div class="cta"><a class="btn dark" href="projects/">See my projects</a><a class="btn ghost" href="resume/">View resume</a></div></div>
+<div class="cs">
+<div class="card" style="--ac:var(--coral)"><span class="ib">🚀</span><h3>Idea to handover</h3><p>I run projects through concept, proof of concept, design verification and handover to product development.</p></div>
+<div class="card" style="--ac:var(--blue)"><span class="ib">🛡️</span><h3>Protected results</h3><p>Two of my projects led to a patent. One reached a customer-ready sample, and several prototypes were validated through testing.</p></div>
+<div class="card" style="--ac:var(--green)"><span class="ib">👥</span><h3>Cross-functional teams</h3><p>I lead simulation, hardware, firmware, testing, procurement and sales, with about five projects in parallel today.</p></div>
+<div class="card" style="--ac:var(--purple)"><span class="ib">⚙️</span><h3>Agile and waterfall</h3><p>I use Scrum with Azure DevOps and classic planning with Smartsheet, depending on what the project needs.</p></div>
+<div class="card" style="--ac:var(--yellow)"><span class="ib">💶</span><h3>Cost and supplier focus</h3><p>Budget and effort control, design-to-cost thinking and daily work with suppliers in Europe and Asia.</p></div>
+<div class="card" style="--ac:var(--coral)"><span class="ib">📑</span><h3>Funding and documentation</h3><p>I prepare evidence for public R&amp;D funding and keep plans, hours and costs consistent.</p></div>
+</div></div></section>
+
 
 
 <section class="sec"><div class="in band"><div><h2>Let's build something together</h2><p style="font-size:1.1rem">Got a project, a question or an opportunity? I'd love to hear from you.</p></div><div><a class="btn dark" href="mailto:islam@mydul.me">Email me</a><a class="btn ghost" href="https://www.linkedin.com/in/mydul/">LinkedIn</a></div></div></section>
