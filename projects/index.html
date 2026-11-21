@@ -41,102 +41,117 @@ html[data-theme=dark] .pj .ar{background:#26253a;color:#eee}
 @media(max-width:560px){.pj .mt dl{grid-template-columns:1fr}.cmp thead{display:none}.cmp,.cmp tbody,.cmp tr,.cmp td{display:block;width:100%}.cmp tr{border-bottom:1px solid var(--line);padding:8px 0}.cmp td{border:0;padding:4px 14px}.cmp td:first-child{width:100%;color:var(--ink);font-size:15px}.cmp td:nth-child(2):before{content:"Proprietary: ";font-weight:700;color:var(--ink)}.cmp td:nth-child(3):before{content:"Open source: ";font-weight:700;color:var(--ink)}}
 </style></head><body data-root="../"><main class="wrap">
 <p class=kicker>Work</p><h1>Projects &amp; <em>research</em></h1>
-<p class=lead>Papers, theses and lab projects from electronics, nanofabrication and sensors. Open a project to read the short version: what it was about, how it was done and what came out.</p>
+<p class=lead>Papers, theses and lab projects from electronics, nanofabrication and sensors. Open a project to read the short version: what it was about, the problem, how it was done and what came out.</p>
 <div class=pf id=pf><button class=on data-f="all">All</button><button data-f="paper">Journal paper</button><button data-f="thesis">Thesis</button><button data-f="lab">Lab projects</button><button data-f="side">Side projects</button></div>
 
 <div id=list>
-<!-- ═════ FULL WRITE-UP: EDA SURVEY ═════ -->
-<details class=pj data-t="paper" open style="--ac:var(--blue)">
-<summary><span class=bd>📄</span><div><span class=ty>Journal paper · Co-author</span><h3>Survey on Electrical Design Automation Tools and Software</h3><p class=sm>A guided comparison of free/open-source and proprietary EDA tools.</p></div><span class=ar>⌄</span></summary>
-<div class=in2>
-<aside class=mt><dl>
-<div><dt>Where</dt><dd>Green University of Bangladesh<small>Dhaka, Bangladesh</small></dd></div>
-<div><dt>When</dt><dd>February 2017</dd></div>
-<div><dt>Published in</dt><dd>GUB Journal of Science and Engineering (GUBJSE), Vol. 1, Issue 1<small>Green University Press · ISSN 2409-0476</small></dd></div>
-<div><dt>Team</dt><dd>Md. Hasan Maruf<small>lead author</small>Md. Mydul Islam<small>co-author</small>Faysal Al Mahmud<small>co-author</small></dd></div>
-<!-- SUPERVISOR: add a line like <div><dt>Supervision</dt><dd>Name<small>Title, Department</small></dd></div> -->
-<div><dt>Type</dt><dd>Literature and tool survey (desk study, no lab experiments)</dd></div>
-<div><dt>Keywords</dt><dd class=tg><span>EDA</span><span>VLSI</span><span>FPGA</span><span>Open source</span><span>Layout</span><span>Simulation</span></dd></div>
-</dl></aside>
+<details class=pj data-t="thesis" open style="--ac:var(--coral)"><summary><span class=bd>🎓</span><div><span class=ty>M.Sc. thesis</span><h3>THz metamaterial microfluidic biosensor chip</h3><p class=sm>A label-free sensor chip for tiny liquid samples, fabricated and measured at THz frequencies.</p></div><span class=ar>⌄</span></summary>
+<div class=in2><aside class=mt><dl><div><dt>Where</dt><dd>University of Siegen<small>Institute of High Frequency and Quantum Electronics</small></dd></div><div><dt>When</dt><dd>Completed May 2023</dd></div><div><dt>Tools &amp; topics</dt><dd class=tg><span>Photolithography</span><span>RIE</span><span>Lift-off</span><span>CVD / PVD</span><span>PDMS</span><span>THz-TDS</span></dd></div></dl></aside>
 <div class=ct>
-<section class=sc style="--c:var(--yellow)"><h4><i>🧾</i>Abstract</h4><p>The paper surveys the software tools used in electronic design automation (EDA), across operating systems and platforms. It sorts the tools by the task they serve and then compares the two development models, free/open-source and proprietary software, on the features that matter when choosing a tool.</p></section>
-<section class=sc style="--c:var(--blue)"><h4><i>🚪</i>Introduction</h4><p>Integrated circuits keep growing in complexity at an exponential rate. Early geometric design software could not keep to the layer limits of complex circuits, so performance dropped. EDA tools were built to solve this. They cover design from system level down to layout, with their own synthesis, verification and analysis tool sets, and many companies keep extending them.</p></section>
-<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>There are many EDA tools, and they differ a lot. Free tools rarely cover every step, so users combine several of them. Proprietary suites cover more but come with licences and cost. Engineers and students need a clear picture of what each kind can and cannot do before they pick one.</p></section>
-<section class=sc style="--c:var(--green)"><h4><i>✨</i>What's new</h4><ul><li>One overview that groups the tools by function and by licence type.</li><li>A side-by-side comparison of open-source and proprietary tools on seven criteria.</li><li>Practical notes on which free tool fits which task, for example synthesis, physical layout or FPGA work.</li></ul></section>
-<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><p style="margin-bottom:14px">Tools were first classified by function (schematic entry, PCB design, simulation, Gerber viewing and so on) and then split into two licence groups. The free group was divided into three areas:</p>
-<div class=two>
-<div class=box><b>Open-source: synthesis</b><div class=tg><span>ICARUS Verilog</span><span>Verilator</span><span>GHDL</span><span>KiCad</span><span>PLA / gate-array generators</span><span>Compactors &amp; routers</span></div></div>
-<div class=box><b>Open-source: physical layout</b><div class=tg><span>Magic</span><span>Microwind</span><span>Alliance CAD</span><span>Electric</span><span>Tanner</span><span>Toped</span></div></div>
-<div class=box><b>Open-source: FPGA &amp; simulation</b><div class=tg><span>Xilinx ISE WebPACK</span><span>Altera Quartus II</span><span>Fizzim</span><span>Fedora Electronic Lab</span><span>TCE</span><span>QUCS</span></div></div>
-<div class=box><b>Proprietary suites</b><div class=tg><span>Synopsys</span><span>Cadence</span><span>Mentor Graphics</span><span>Tina</span><span>NI Circuit Design Suite</span></div></div>
-</div></section>
-<section class=sc style="--c:var(--blue)"><h4><i>🔬</i>Evaluation</h4><p>This is a survey, so there was no lab experiment. Each tool family was described by its purpose and typical use. The two licence models were then compared on development, support, flexibility, cost, features, accuracy and efficiency.</p></section>
-<section class=sc style="--c:var(--yellow)"><h4><i>📊</i>Findings</h4>
-<table class=cmp><thead><tr><th>Criterion</th><th>Proprietary</th><th>Open source / free</th></tr></thead><tbody>
-<tr><td>Development</td><td>Handled by the vendor, at its discretion.</td><td>Community collaboration, lasts while the community is active.</td></tr>
-<tr><td>Support</td><td>Manuals, FAQs and a contact point.</td><td>Limited, often no organised support.</td></tr>
-<tr><td>Flexibility</td><td>As much as the vendor allows.</td><td>Can be modified and extended.</td></tr>
-<tr><td>Cost</td><td>Licence fee.</td><td>No cost.</td></tr>
-<tr><td>Features</td><td>Maximum features and a polished interface.</td><td>No single tool offers everything.</td></tr>
-<tr><td>Accuracy</td><td>Usually higher.</td><td>Not always fully accurate.</td></tr>
-<tr><td>Efficiency</td><td>Consistently better.</td><td>Average.</td></tr>
-</tbody></table></section>
-<section class="sc kp"><h4><i>✅</i>Summary</h4><ul>
-<li>EDA tools split into two licence groups: proprietary and free/open-source.</li>
-<li>Proprietary suites (Synopsys, Cadence, Mentor Graphics) lead on features, accuracy, efficiency and support.</li>
-<li>Free tools cost nothing and can be modified, but you often need several of them to cover a full design flow.</li>
-<li>The best choice depends on the user's needs, budget and how much support and accuracy the project requires.</li>
-</ul></section>
+<section class=sc style="--c:var(--yellow)"><h4><i>🧾</i>About</h4><p>Terahertz (THz) waves are very sensitive to what a material is made of, which makes them attractive for biosensing without any labels or dyes. The thesis designed, built and measured a chip that combines a metamaterial sensor with a microfluidic channel for liquid samples.</p></section>
+<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>Biosensing needs a sensitive, label-free readout. THz waves react strongly to liquids, but water absorbs them heavily, so the liquid volume must be tiny and well controlled. That asks for a sensor and a fluidic channel built together at very small scale.</p></section>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Fabricated metamaterial sensors in the cleanroom with photolithography, plasma/RIE etching, lift-off, and CVD/PVD deposition.</li><li>Built the microfluidic layer by soft imprinting with PDMS and TMCS surface treatment, so the liquid is confined to a thin, defined channel.</li><li>Checked the quality of each layer with optical microscopy and optical profilometry.</li><li>Measured the chips with THz frequency-domain spectroscopy for precise material characterisation. A HQ+ 2D graphene transfer system was also used in the lab work.</li></ul></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Working chips were fabricated and measured at THz frequencies.</li><li>The soft-imprint approach for the microfluidic layer was developed independently.</li><li>Combined cleanroom fabrication, polymer casting and THz measurement in one project.</li><li>The thesis was graded Very Good.</li></ul></section>
 </div></div></details>
-
-<!-- ═════ THESES & LAB ═════ -->
-<details class=pj data-t="thesis" style="--ac:var(--coral)"><summary><span class=bd>🎓</span><div><span class=ty>M.Sc. thesis</span><h3>THz metamaterial microfluidic biosensor chip</h3><p class=sm>A label-free sensor chip for tiny liquid samples, fabricated and measured at THz frequencies.</p></div><span class=ar>⌄</span></summary>
-<div class=in2><aside class=mt><dl>
-<div><dt>Where</dt><dd>University of Siegen<small>Institute of High Frequency and Quantum Electronics</small></dd></div>
-<div><dt>When</dt><dd>Completed May 2023</dd></div>
-<div><dt>Tools</dt><dd class=tg><span>Photolithography</span><span>RIE</span><span>Lift-off</span><span>CVD / PVD</span><span>PDMS</span><span>THz-TDS</span></dd></div></dl></aside>
-<div class=ct>
-<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>Biosensing needs a sensitive, label-free readout. THz waves react strongly to liquids, but water absorbs them heavily, so the liquid volume must be tiny and well controlled.</p></section>
-<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Fabricated metamaterial sensors in the cleanroom with photolithography, plasma/RIE etching, lift-off, and CVD/PVD deposition.</li><li>Built the microfluidic layer by soft imprinting with PDMS and TMCS surface treatment.</li><li>Checked quality with optical microscopy and profilometry, and measured with THz frequency-domain spectroscopy.</li></ul></section>
-<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Working chips were fabricated and measured at THz frequencies.</li><li>The soft-imprint approach was developed independently.</li><li>The thesis was graded Very Good.</li></ul><a class=link style="color:var(--yellow)" href=thz-metamaterial-sensor.html>Open the case study →</a></section>
-</div></div></details>
-
 <details class=pj data-t="thesis" style="--ac:var(--green)"><summary><span class=bd>🧠</span><div><span class=ty>B.Sc. thesis</span><h3>Memristor: window functions and logic gates</h3><p class=sm>A comparison of memristor window functions and hybrid CMOS/memristor logic gates.</p></div><span class=ar>⌄</span></summary>
-<div class=in2><aside class=mt><dl>
-<div><dt>Where</dt><dd>Green University of Bangladesh<small>Electrical and Electronic Engineering</small></dd></div>
-<div><dt>When</dt><dd>Completed May 2016</dd></div>
-<div><dt>Tools</dt><dd class=tg><span>Simulation</span><span>MRL</span><span>CMOS</span></dd></div></dl></aside>
+<div class=in2><aside class=mt><dl><div><dt>Where</dt><dd>Green University of Bangladesh<small>Electrical and Electronic Engineering</small></dd></div><div><dt>When</dt><dd>Completed May 2016</dd></div><div><dt>Tools &amp; topics</dt><dd class=tg><span>Circuit simulation</span><span>MRL</span><span>CMOS</span><span>Memristor models</span></dd></div></dl></aside>
 <div class=ct>
-<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Compared window functions that model the memristor's boundary behaviour.</li><li>Designed logic gates in memristor ratioed logic (MRL) style.</li><li>Built a hybrid CMOS/memristor cell for universal logic gates.</li></ul></section>
-<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>An XOR gate in the hybrid design was comparable to a CMOS implementation.</li><li>The thesis covered both the device model and circuit-level logic design.</li></ul><a class=link style="color:var(--yellow)" href=memristor-thesis.html>Open the case study →</a></section>
+<section class=sc style="--c:var(--yellow)"><h4><i>🧾</i>About</h4><p>The memristor is a two-terminal device whose resistance depends on the charge that has flowed through it. It is a candidate building block for compact memory and logic. The thesis studied how it is modelled and how it can be used to build logic gates.</p></section>
+<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>Memristor models need window functions to keep the internal state within its physical bounds, and different windows give different behaviour near the edges. Circuit designers also need to know whether memristor-based gates can compete with ordinary CMOS gates.</p></section>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Ran a comparative study of the common window functions that model the memristor’s boundary behaviour.</li><li>Designed logic gates in Memristor Ratioed Logic (MRL) style.</li><li>Built a hybrid CMOS/memristor cell that can be used for universal logic gates.</li><li>Compared the resulting gates with CMOS implementations in simulation.</li></ul></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Window functions were compared side by side as part of the thesis.</li><li>An XOR gate in the hybrid design was comparable to a CMOS implementation.</li><li>The work covered both the device model and circuit-level logic design.</li></ul></section>
 </div></div></details>
-
-<details class=pj data-t="lab" style="--ac:var(--yellow)"><summary><span class=bd>⚡</span><div><span class=ty>Lab project · M.Sc.</span><h3>Graphene field-effect transistor (GFET)</h3><p class=sm>From CVD-grown graphene to a working transistor and its mobility measurement.</p></div><span class=ar>⌄</span></summary>
-<div class=in2><aside class=mt><dl>
-<div><dt>Where</dt><dd>University of Siegen<small>Cleanroom and research labs</small></dd></div>
-<div><dt>Tools</dt><dd class=tg><span>CVD</span><span>Optical lithography</span><span>PVD evaporation</span></dd></div></dl></aside>
+<details class=pj data-t="paper" style="--ac:var(--blue)"><summary><span class=bd>📄</span><div><span class=ty>Journal paper · Co-author</span><h3>Survey on Electrical Design Automation Tools and Software</h3><p class=sm>A guided comparison of free/open-source and proprietary EDA tools.</p></div><span class=ar>⌄</span></summary>
+<div class=in2><aside class=mt><dl><div><dt>Where</dt><dd>Green University of Bangladesh<small>Dhaka, Bangladesh</small></dd></div><div><dt>When</dt><dd>February 2017</dd></div><div><dt>Published in</dt><dd>GUB Journal of Science and Engineering (GUBJSE), Vol. 1, Issue 1<small>Green University Press · ISSN 2409-0476</small></dd></div><div><dt>Team</dt><dd>Md. Hasan Maruf <small>lead author</small>Md. Mydul Islam <small>co-author</small>Faysal Al Mahmud <small>co-author</small></dd></div><div><dt>Tools &amp; topics</dt><dd class=tg><span>EDA</span><span>VLSI</span><span>FPGA</span><span>Open source</span></dd></div></dl></aside>
 <div class=ct>
-<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Grew graphene by chemical vapour deposition.</li><li>Patterned devices by optical lithography and deposited thin films by evaporation (PVD).</li><li>Measured carrier mobility and transconductance of the finished device.</li></ul></section>
-<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Covered the full chain: material growth, device fabrication and electrical characterisation.</li></ul><a class=link style="color:var(--yellow)" href=graphene-fet.html>Open the case study →</a></section>
+<section class=sc style="--c:var(--yellow)"><h4><i>🧾</i>About</h4><p>The paper surveys the software tools used in electronic design automation (EDA), from system level down to layout, and compares free/open-source tools with proprietary suites. It is a literature and tool survey, with no lab experiments.</p></section>
+<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>There are many EDA tools and they differ a lot. Free tools rarely cover every design step, so users combine several of them. Proprietary suites cover more but come with licences and cost. Students and engineers need a clear picture before they choose.</p></section>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Grouped the tools by function: schematic entry, PCB design, simulation, synthesis, physical layout and FPGA work.</li><li>Split them into open-source (e.g. KiCad, Magic, Icarus Verilog, QUCS) and proprietary (Synopsys, Cadence, Mentor Graphics, Tina).</li><li>Compared the two groups on development, support, flexibility, cost, features, accuracy and efficiency.</li></ul></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Proprietary suites lead on features, accuracy, efficiency and support.</li><li>Free tools cost nothing and can be modified, but a full flow often needs several of them.</li><li>The best choice depends on the user’s needs, budget and the support the project requires.</li></ul></section>
+</div></div></details>
+<details class=pj data-t="lab" style="--ac:var(--yellow)"><summary><span class=bd>🔋</span><div><span class=ty>Lab project · M.Sc.</span><h3>Cross-sectioning PEM fuel cells (ultramicrotome)</h3><p class=sm>Preparing ultra-thin slices of fuel cell electrodes for TEM analysis.</p></div><span class=ar>⌄</span></summary>
+<div class=in2><aside class=mt><dl><div><dt>Where</dt><dd>University of Siegen<small>Research-group cleanroom and labs</small></dd></div><div><dt>When</dt><dd>During M.Sc. studies, up to May 2023</dd></div><div><dt>Tools &amp; topics</dt><dd class=tg><span>Ultramicrotomy</span><span>TEM sample prep</span><span>Optical microscopy</span></dd></div></dl></aside>
+<div class=ct>
+<section class=sc style="--c:var(--yellow)"><h4><i>🧾</i>About</h4><p>A transmission electron microscope (TEM) can only image extremely thin slices. This project prepared such slices from PEM fuel cell electrodes with an ultramicrotome, a machine that cuts sections with a diamond or glass knife.</p></section>
+<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>The layers of a fuel cell are soft, fragile and different from each other, so cutting a clean cross-section is hard. The knife angle and the knife quality strongly affect the result.</p></section>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Researched the effect of diamond and glass knife angles on the cut.</li><li>Examined knives and sections with optical microscopy.</li><li>Designed, prototyped and implemented a glass knife boat, the small water trough that holds the sections after cutting.</li><li>Prepared cross-sections of PEM fuel cell electrodes for TEM analysis.</li></ul></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Covered the whole sample-preparation chain for TEM, from knife to section.</li><li>Included a hands-on design task: the glass knife boat.</li><li>Showed how much preparation quality decides the quality of nanoscale imaging.</li></ul></section>
+</div></div></details>
+<details class=pj data-t="lab" style="--ac:var(--coral)"><summary><span class=bd>⚡</span><div><span class=ty>Lab project · M.Sc.</span><h3>Graphene field-effect transistor (GFET) fabrication</h3><p class=sm>From CVD-grown graphene to a working transistor and its electrical measurement.</p></div><span class=ar>⌄</span></summary>
+<div class=in2><aside class=mt><dl><div><dt>Where</dt><dd>University of Siegen<small>Cleanroom and research labs</small></dd></div><div><dt>When</dt><dd>During M.Sc. studies, up to May 2023</dd></div><div><dt>Tools &amp; topics</dt><dd class=tg><span>CVD</span><span>Optical lithography</span><span>PVD evaporation</span><span>Mobility measurement</span></dd></div></dl></aside>
+<div class=ct>
+<section class=sc style="--c:var(--yellow)"><h4><i>🧾</i>About</h4><p>Graphene is a one-atom-thick carbon layer with very high carrier mobility, which makes it interesting for fast transistors and sensors. This project built a graphene transistor and measured how well it works.</p></section>
+<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>Graphene transistor performance depends heavily on fabrication quality, so each step has to be controlled and then verified by measurement.</p></section>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Grew graphene by chemical vapour deposition (CVD).</li><li>Patterned the devices with optical lithography.</li><li>Deposited thin-film contacts by evaporation (PVD).</li><li>Measured the carrier mobility and transconductance of the finished transistor.</li></ul></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Covered the full chain: material growth, device fabrication and electrical characterisation.</li><li>Produced working GFET devices that were measured for mobility and transconductance.</li><li>Linked cleanroom process quality directly to device performance.</li></ul></section>
+</div></div></details>
+<details class=pj data-t="lab" style="--ac:var(--purple)"><summary><span class=bd>📈</span><div><span class=ty>Lab project · M.Sc.</span><h3>GFET: mobility and transconductance analysis</h3><p class=sm>Reading the performance of a graphene transistor from its measured curves.</p></div><span class=ar>⌄</span></summary>
+<div class=in2><aside class=mt><dl><div><dt>Where</dt><dd>University of Siegen<small>Research labs</small></dd></div><div><dt>When</dt><dd>During M.Sc. studies, up to May 2023</dd></div><div><dt>Tools &amp; topics</dt><dd class=tg><span>Graphene</span><span>Electrical measurement</span><span>Data analysis</span></dd></div></dl></aside>
+<div class=ct>
+<section class=sc style="--c:var(--yellow)"><h4><i>🧾</i>About</h4><p>Fabrication alone does not say how good a transistor is. This project focused on the measurement side: extracting the key figures of a graphene FET from its electrical characteristics.</p></section>
+<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>Graphene’s properties are exceptional but vary a lot with material quality and contacts. To compare devices fairly, the carrier mobility and transconductance must be extracted in a consistent way.</p></section>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Reviewed the properties and applications of graphene as background.</li><li>Measured the electrical characteristics of the GFET.</li><li>Analysed mobility and transconductance from the measured data.</li></ul></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Turned raw measurements into the two figures that describe transistor quality.</li><li>Complements the GFET fabrication project above.</li></ul></section>
+</div></div></details>
+<details class=pj data-t="lab" style="--ac:var(--green)"><summary><span class=bd>🧲</span><div><span class=ty>Lab project · M.Sc.</span><h3>Super-paramagnetic iron oxide nanoparticles</h3><p class=sm>Synthesising magnetic nanoparticles and reading their crystal structure with XRD.</p></div><span class=ar>⌄</span></summary>
+<div class=in2><aside class=mt><dl><div><dt>Where</dt><dd>University of Siegen<small>Research labs</small></dd></div><div><dt>When</dt><dd>During M.Sc. studies, up to May 2023</dd></div><div><dt>Tools &amp; topics</dt><dd class=tg><span>Synthesis</span><span>XRD</span><span>Bragg’s law</span><span>Debye–Scherrer</span></dd></div></dl></aside>
+<div class=ct>
+<section class=sc style="--c:var(--yellow)"><h4><i>🧾</i>About</h4><p>Iron oxide nanoparticles that are super-paramagnetic are used in areas such as biomedicine and sensing. Their properties depend on their crystal structure and size, which X-ray diffraction can reveal.</p></section>
+<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>After synthesis, the particles have to be identified: which crystal phase was formed, and how large are the crystallites? That needs a reliable analysis method.</p></section>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Synthesised super-paramagnetic iron oxide nanoparticles.</li><li>Studied the basics of crystallography and X-ray diffraction (XRD).</li><li>Applied Bragg’s law to the diffraction peaks.</li><li>Investigated the crystal structure with the Debye–Scherrer method.</li></ul></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Covered both synthesis and structural characterisation of the nanoparticles.</li><li>Connected diffraction theory (Bragg, Debye–Scherrer) to a real measured sample.</li></ul></section>
+</div></div></details>
+<details class=pj data-t="lab" style="--ac:var(--blue)"><summary><span class=bd>🔬</span><div><span class=ty>Lab project · M.Sc.</span><h3>Surface plasmon resonance (SPR) sensing</h3><p class=sm>Studying a label-free optical sensing method at the water–gold interface.</p></div><span class=ar>⌄</span></summary>
+<div class=in2><aside class=mt><dl><div><dt>Where</dt><dd>University of Siegen<small>Photonics lab</small></dd></div><div><dt>When</dt><dd>During M.Sc. studies, up to May 2023</dd></div><div><dt>Tools &amp; topics</dt><dd class=tg><span>SPR</span><span>Otto</span><span>Kretschmann</span><span>Optics</span></dd></div></dl></aside>
+<div class=ct>
+<section class=sc style="--c:var(--yellow)"><h4><i>🧾</i>About</h4><p>Surface plasmon resonance detects tiny changes at a metal surface, for example when molecules attach to it. It is widely used as a label-free biosensing method.</p></section>
+<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>To use SPR for sensing, one has to understand how light couples into the plasmon at the metal–medium interface, and how that depends on polarisation and set-up.</p></section>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Carried out a graphical analysis of the water–gold interface.</li><li>Measured P- and S-polarised light with an air–gold medium.</li><li>Compared the Otto and Kretschmann configurations for exciting the plasmon.</li></ul></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Showed the polarisation dependence of plasmon excitation (P versus S).</li><li>Compared the two classic coupling set-ups.</li><li>Gave the optical background for later THz and biosensor work.</li></ul></section>
+</div></div></details>
+<details class=pj data-t="lab" style="--ac:var(--yellow)"><summary><span class=bd>☢️</span><div><span class=ty>Lab project · M.Sc.</span><h3>X-ray fluorescence (XRF) analysis</h3><p class=sm>Identifying the elements in a sample with energy- and wavelength-dispersive XRF.</p></div><span class=ar>⌄</span></summary>
+<div class=in2><aside class=mt><dl><div><dt>Where</dt><dd>University of Siegen<small>Materials characterisation lab</small></dd></div><div><dt>When</dt><dd>During M.Sc. studies, up to May 2023</dd></div><div><dt>Tools &amp; topics</dt><dd class=tg><span>EDXRF</span><span>WDXRF</span><span>SDD</span><span>Calibration</span></dd></div></dl></aside>
+<div class=ct>
+<section class=sc style="--c:var(--yellow)"><h4><i>🧾</i>About</h4><p>XRF tells which chemical elements are in a sample without destroying it. The sample is excited with X-rays and emits fluorescence at energies that are specific to each element.</p></section>
+<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>Reading an XRF spectrum correctly needs a calibrated detector, and the two detection principles, energy-dispersive and wavelength-dispersive, behave differently.</p></section>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Worked with both energy-dispersive (ED) and wavelength-dispersive (WD) XRF.</li><li>Calibrated the energy axis of the silicon drift detector (SDD).</li><li>Carried out qualitative multi-element analysis of samples.</li></ul></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Learned the full XRF routine: calibration first, then analysis.</li><li>Compared the two dispersive methods on real samples.</li></ul></section>
+</div></div></details>
+<details class=pj data-t="lab" style="--ac:var(--coral)"><summary><span class=bd>🔬</span><div><span class=ty>Lab project · M.Sc.</span><h3>SEM and AFM visualisation</h3><p class=sm>Imaging surfaces and surface charge at the nanoscale.</p></div><span class=ar>⌄</span></summary>
+<div class=in2><aside class=mt><dl><div><dt>Where</dt><dd>University of Siegen<small>Nanoanalysis labs</small></dd></div><div><dt>When</dt><dd>During M.Sc. studies, up to May 2023</dd></div><div><dt>Tools &amp; topics</dt><dd class=tg><span>SEM</span><span>AFM</span><span>Nanoscale imaging</span></dd></div></dl></aside>
+<div class=ct>
+<section class=sc style="--c:var(--yellow)"><h4><i>🧾</i>About</h4><p>Scanning electron microscopy (SEM) and atomic force microscopy (AFM) are two core tools for looking at nanostructures. SEM images with electrons; AFM feels the surface with a sharp tip.</p></section>
+<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>A nanostructure can look different depending on the method. Using both gives shape, height and, with the right mode, electrical information about the surface.</p></section>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Used atomic force microscopy (AFM) and scanning electron microscopy (SEM) on nanoscale samples.</li><li>Visualised the surface charge at the nanoscale.</li><li>Compared what each technique shows about the same surface.</li></ul></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Hands-on practice with the two main nanoscale imaging methods.</li><li>Included the visualisation of surface charge, not just topography.</li></ul></section>
+</div></div></details>
+<details class=pj data-t="lab" style="--ac:var(--green)"><summary><span class=bd>🔌</span><div><span class=ty>Lab project · M.Sc.</span><h3>Nanomaterials for supercapacitors</h3><p class=sm>Capacitance and charge/discharge behaviour of nanostructured energy-storage devices.</p></div><span class=ar>⌄</span></summary>
+<div class=in2><aside class=mt><dl><div><dt>Where</dt><dd>University of Siegen<small>Research labs</small></dd></div><div><dt>When</dt><dd>During M.Sc. studies, up to May 2023</dd></div><div><dt>Tools &amp; topics</dt><dd class=tg><span>AAO</span><span>Supercapacitors</span><span>Charge/discharge</span></dd></div></dl></aside>
+<div class=ct>
+<section class=sc style="--c:var(--yellow)"><h4><i>🧾</i>About</h4><p>Supercapacitors store energy quickly and survive many charge cycles. Nanomaterials increase the surface area that stores charge, so the nanostructure matters a lot.</p></section>
+<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>Different supercapacitor variants behave differently, and they can only be compared with consistent measurements of capacitance and charge/discharge profiles.</p></section>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Studied nanoporous anodic aluminium oxide (AAO) films and atomic-scale fabrication techniques.</li><li>Measured the capacitance distribution of several supercapacitor variants.</li><li>Recorded and compared their charge/discharge profiles.</li></ul></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Linked nanostructure (porous AAO) to energy-storage behaviour.</li><li>Compared supercapacitor variants on the same measurements.</li></ul></section>
+</div></div></details>
+<details class=pj data-t="side" style="--ac:var(--purple)"><summary><span class=bd>🧮</span><div><span class=ty>Undergraduate project</span><h3>Arithmetic logic unit (ALU)</h3><p class=sm>A digital processor block that adds, subtracts and performs logic operations.</p></div><span class=ar>⌄</span></summary>
+<div class=in2><aside class=mt><dl><div><dt>Where</dt><dd>Green University of Bangladesh<small>Electrical and Electronic Engineering</small></dd></div><div><dt>When</dt><dd>During B.Sc. studies, up to May 2016</dd></div><div><dt>Tools &amp; topics</dt><dd class=tg><span>Digital design</span><span>Logic gates</span><span>CMOS</span></dd></div></dl></aside>
+<div class=ct>
+<section class=sc style="--c:var(--yellow)"><h4><i>🧾</i>About</h4><p>The ALU is the part of a processor that does the arithmetic and logic. Building one is a classic way to learn how digital circuits turn into computation.</p></section>
+<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>An ALU has to handle several different operations in one block and select between them correctly.</p></section>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Designed the ALU from basic digital building blocks.</li><li>Implemented it to carry out several computational tasks.</li><li>Tested that each operation gave the expected result.</li></ul></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Showed how gates combine into a working processor block.</li><li>A foundation for later work on CMOS and logic design, including the memristor thesis.</li></ul></section>
+</div></div></details>
+<details class=pj data-t="side" style="--ac:var(--blue)"><summary><span class=bd>🚁</span><div><span class=ty>Undergraduate project</span><h3>Quad-copter and Android line-follower robot</h3><p class=sm>Two embedded-systems builds: an aerial surveillance drone and an autonomous car robot.</p></div><span class=ar>⌄</span></summary>
+<div class=in2><aside class=mt><dl><div><dt>Where</dt><dd>Green University of Bangladesh<small>Electrical and Electronic Engineering</small></dd></div><div><dt>When</dt><dd>During B.Sc. studies, up to May 2016</dd></div><div><dt>Tools &amp; topics</dt><dd class=tg><span>Microcontrollers</span><span>Android</span><span>Sensors</span><span>Robotics</span></dd></div></dl></aside>
+<div class=ct>
+<section class=sc style="--c:var(--yellow)"><h4><i>🧾</i>About</h4><p>Two hands-on projects that combined electronics, microcontroller programming and sensors into working machines.</p></section>
+<section class=sc style="--c:var(--coral)"><h4><i>⚠️</i>Problem</h4><p>Both machines have to sense their surroundings and react by themselves: the quad-copter has to stay stable in the air, and the car has to follow a line and avoid obstacles.</p></section>
+<section class=sc style="--c:var(--purple)"><h4><i>🧭</i>Approach</h4><ul><li>Built and programmed a quad-copter for aerial surveillance.</li><li>Built an autonomous Android-controlled car robot.</li><li>Used it for line following and obstacle detection.</li></ul></section>
+<section class="sc kp"><h4><i>✅</i>Summary</h4><ul><li>Two working embedded builds, one airborne and one on wheels.</li><li>Practical experience with microcontrollers, sensors and control.</li></ul></section>
 </div></div></details>
 </div>
-
-<h2 class=sech>More lab and side projects</h2>
-<div class=mini id=mini></div>
 <script>
-const MORE=[
- {t:'lab',ty:'Lab project',h:'Cross-sectioning fuel cells (ultramicrotome)',u:['Cross-sectioned PEM fuel cells for TEM analysis.','Researched diamond and glass knife angles; checked by optical microscopy.','Designed and built a glass knife boat.'],g:['TEM','Sample prep']},
- {t:'lab',ty:'Lab project',h:'SEM and AFM visualisation',u:['Atomic force and scanning electron microscopy.','Visualised surface charge at the nanoscale.'],g:['SEM','AFM']},
- {t:'lab',ty:'Lab project',h:'Super-paramagnetic iron oxide nanoparticles',u:['Synthesised the particles and analysed them by X-ray diffraction.','Applied Bragg’s law and the Debye–Scherrer method to the crystal structure.'],g:['XRD','Synthesis']},
- {t:'lab',ty:'Lab project',h:'Surface plasmon resonance sensing',u:['Graphical analysis of the water–gold interface.','Measured P- and S-polarised light; Otto and Kretschmann configurations.'],g:['SPR','Optics']},
- {t:'lab',ty:'Lab project',h:'X-ray fluorescence (XRF)',u:['Energy- and wavelength-dispersive XRF analysis.','Energy calibration of the SDD and qualitative multi-element analysis.'],g:['XRF']},
- {t:'lab',ty:'Lab project',h:'Nanomaterials for supercapacitors',u:['Capacitance distribution and charge/discharge profiles of supercapacitor variants.','Nanoporous anodic aluminium oxide films.'],g:['AAO','Energy storage']},
- {t:'lab',ty:'Lab project',h:'GFET mobility and transconductance',u:['Graphene properties and applications.','Mobility and transconductance analysis of the transistor.'],g:['Graphene','Measurement']},
- {t:'side',ty:'Undergraduate project',h:'Arithmetic logic unit (ALU)',u:['Designed and implemented an ALU for several computational tasks.'],g:['Digital design']},
- {t:'side',ty:'Undergraduate project',h:'Quad-copter and Android line-follower robot',u:['Built and programmed a quad-copter for aerial surveillance.','Autonomous Android-based car robot for line following and obstacle detection.'],g:['Embedded','Robotics']}
-];
-document.getElementById('mini').innerHTML=MORE.map(m=>`<article class=mc data-t="${m.t}"><span class=ty>${m.ty}</span><h3>${m.h}</h3><ul>${m.u.map(x=>`<li>${x}</li>`).join('')}</ul><div class=tg>${m.g.map(x=>`<span>${x}</span>`).join('')}</div></article>`).join('');
 const pf=document.getElementById('pf');
-pf.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;pf.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));const f=b.dataset.f;document.querySelectorAll('.pj,.mc').forEach(c=>c.style.display=(f=='all'||c.dataset.t==f)?'':'none');document.querySelector('.sech').style.display=(f=='all'||f=='lab'||f=='side')?'':'none'});
+pf.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;pf.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));const f=b.dataset.f;document.querySelectorAll('.pj').forEach(c=>c.style.display=(f=='all'||c.dataset.t==f)?'':'none')});
 </script>
 </main><script src="../assets/js/site.js"></script></body></html>
